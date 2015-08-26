@@ -16,7 +16,9 @@ class frmBtsModUpdate extends FrmAddon {
 
 	public static function load_hooks() {
 		add_filter( 'frm_include_addon_page', '__return_true' );
-		new frmBtsModUpdate();
+		if ( class_exists( 'FrmAddon' ) ) {
+			new frmBtsModUpdate();
+		}
 	}
 
 }
