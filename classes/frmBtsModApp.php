@@ -4,7 +4,7 @@ class frmBtsModApp {
 
 	public function __construct() {
 		add_shortcode( 'frmmodal', 'frmBtsModApp::insert_modal_link' );
-		add_action( 'admin_init', 'frmBtsModUpdate::load_hooks' );
+		add_action( 'admin_init', 'frmBtsModApp::load_autoupdater' );
 	}
 
 	public static function insert_modal_link( $atts ) {
@@ -26,6 +26,12 @@ class frmBtsModApp {
 
 		$link = '<a href="#" data-toggle="modal" data-target="#frm-modal-' . esc_attr( $atts['id'] ) . '">' . $atts['label'] . '</a>';
 		return $link;
+	}
+
+	public static function load_autoupdater() {
+		if ( class_exists( 'FrmAddon' ) ) {
+			frmBtsModUpdate::load_hooks();
+		}
 	}
 
 	public static function enqueue_scripts() {
