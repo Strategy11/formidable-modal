@@ -10,7 +10,7 @@ class frmBtsModApp {
 	public static function insert_modal_link( $atts ) {
 		$defaults = array(
 			'id' => '', 'label' => __( '', 'frmmodal' ),
-			'type' => 'form', 'classes' => '',
+			'type' => 'form', 'class' => '',
 		);
 		$atts = array_merge( $defaults, $atts );
 
@@ -27,7 +27,7 @@ class frmBtsModApp {
 		add_action( 'frm_enqueue_form_scripts', 'frmBtsModApp::enqueue_scripts' );
 		add_action( 'wp_footer', 'frmBtsModApp::output_modal' );
 
-		$classes = empty( $atts['classes'] ) ? '' : ' class="' . esc_attr( $atts['classes'] ) . '"';
+		$classes = empty( $atts['class'] ) ? '' : ' class="' . esc_attr( $atts['class'] ) . '"';
 		$link = '<a href="#" data-toggle="modal" data-target="#frm-modal-' . esc_attr( $atts['id'] ) . '"' . $classes . '>' . $atts['label'] . '</a>';
 		return $link;
 	}
