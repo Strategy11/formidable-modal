@@ -52,7 +52,7 @@ class frmBtsModApp {
 				$modal .= '<div class="modal-dialog">';
 				$modal .= '<div class="modal-content">';
 				$modal .= '<div class="modal-header">';
-				$modal .= '<a class="close fp fp-times alignright" data-dismiss="modal" ></a>';
+				$modal .= '<a class="close frm_icon_font frm_cancel1_icon alignright" data-dismiss="modal" ></a>';
 				$modal .= '<h4 class="modal-title" id="frmModalLabel-' . esc_attr( $form_atts['id'] ) . '">'. $form_atts['label'] .'</h4>';
 				$modal .= '</div>';
 				$modal .= '<div class="modal-body">';
