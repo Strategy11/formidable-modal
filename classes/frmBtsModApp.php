@@ -59,8 +59,14 @@ class frmBtsModApp {
 				if ( $form_atts['type'] == 'view' ) {
 					unset( $form_atts['type'] );
 					$modal .= FrmProDisplaysController::get_shortcode( $form_atts );
-				} else {
+				} else if ( $form_atts['type'] == 'form' ) {
 					$modal .= FrmFormsController::get_form_shortcode( $form_atts );
+				} else {
+					$shortcode_atts = '';
+					foreach ( $form_atts as $att => $val ) {
+						$shortcode_atts .= sanitize_text_field( ' '. $att . '="' . $val . '"' );
+					}
+					$modal .= do_shortcode( '['. $form_atts['type'] . $shortcode_atts . ']' );
 				}
 				$modal .= '</div>';
 				$modal .= '</div>';
