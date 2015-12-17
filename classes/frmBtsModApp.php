@@ -14,7 +14,7 @@ class frmBtsModApp {
 		);
 		$atts = array_merge( $defaults, $atts );
 
-		if ( empty( $atts['id'] ) || empty( $atts['label'] ) ) {
+		if ( empty( $atts['label'] ) ) {
 			return;
 		}
 
@@ -64,7 +64,9 @@ class frmBtsModApp {
 				} else {
 					$shortcode_atts = '';
 					foreach ( $form_atts as $att => $val ) {
-						$shortcode_atts .= sanitize_text_field( ' '. $att . '="' . $val . '"' );
+						if ( $att != 'type' ) {
+							$shortcode_atts .= ' '. sanitize_text_field( $att . '="' . $val . '"' );
+						}
 					}
 					$modal .= do_shortcode( '['. $form_atts['type'] . $shortcode_atts . ']' );
 				}
