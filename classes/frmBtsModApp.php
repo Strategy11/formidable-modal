@@ -15,7 +15,7 @@ class frmBtsModApp {
 		$atts = array_merge( $defaults, $atts );
 
 		if ( empty( $atts['label'] ) ) {
-			return;
+			return '';
 		}
 
 		global $frm_vars;
@@ -28,7 +28,8 @@ class frmBtsModApp {
 		add_action( 'wp_footer', 'frmBtsModApp::output_modal' );
 
 		$classes = empty( $atts['class'] ) ? '' : ' class="' . esc_attr( $atts['class'] ) . '"';
-		$link = '<a href="#" data-toggle="modal" data-target="#frm-modal-' . esc_attr( $atts['id'] ) . '"' . $classes . '>' . $atts['label'] . '</a>';
+		$modal_index = count( $frm_vars['modals'] ) - 1;
+		$link = '<a href="#" data-toggle="modal" data-target="#frm-modal-' . esc_attr( $modal_index ) . '"' . $classes . '>' . $atts['label'] . '</a>';
 		return $link;
 	}
 
@@ -47,13 +48,15 @@ class frmBtsModApp {
 	public static function output_modal() {
 		global $frm_vars;
 		if ( isset( $frm_vars['modals'] ) && is_array ( $frm_vars['modals'] ) ) {
-			foreach ( $frm_vars['modals'] as $form_atts ) {
-				$modal = '<div id="frm-modal-' . esc_attr( $form_atts['id'] ) . '" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="frmModalLabel-' . esc_attr( $form_atts['id'] ) . '" aria-hidden="true">';
+			foreach ( $frm_vars['modals'] as $i => $form_atts ) {
+				$modal = '<div id="frm-modal-' . esc_attr( $i ) . '"';
+				$modal .= ' class="modal fade" tabindex="-1" role="dialog"';
+				$modal .= ' aria-labelledby="frmModalLabel-' . esc_attr( $i ) . '" aria-hidden="true">';
 				$modal .= '<div class="modal-dialog">';
 				$modal .= '<div class="modal-content">';
 				$modal .= '<div class="modal-header">';
 				$modal .= '<a class="close frm_icon_font frm_cancel1_icon alignright" data-dismiss="modal" ></a>';
-				$modal .= '<h4 class="modal-title" id="frmModalLabel-' . esc_attr( $form_atts['id'] ) . '">'. $form_atts['label'] .'</h4>';
+				$modal .= '<h4 class="modal-title" id="frmModalLabel-' . esc_attr( $i ) . '">'. $form_atts['label'] .'</h4>';
 				$modal .= '</div>';
 				$modal .= '<div class="modal-body">';
 				if ( $form_atts['type'] == 'view' ) {
