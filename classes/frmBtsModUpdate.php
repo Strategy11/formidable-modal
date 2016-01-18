@@ -8,7 +8,7 @@ class frmBtsModUpdate extends FrmAddon {
 	public $plugin_file;
 	public $plugin_name = 'Bootstrap Modal';
 	public $download_id = 185013;
-	public $version = '1.02';
+	public $version = '1.03';
 
 	public function __construct() {
 		$this->plugin_file = dirname( dirname( __FILE__ ) ) . '/formidable-modal.php';
