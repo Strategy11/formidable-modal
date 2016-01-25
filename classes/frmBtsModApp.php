@@ -24,7 +24,7 @@ class frmBtsModApp {
 		}
 		$frm_vars['modals'][] = $atts;
 
-		add_action( 'frm_enqueue_form_scripts', 'frmBtsModApp::enqueue_scripts' );
+		self::enqueue_scripts();
 		add_action( 'wp_footer', 'frmBtsModApp::output_modal' );
 
 		$classes = empty( $atts['class'] ) ? '' : ' class="' . esc_attr( $atts['class'] ) . '"';
