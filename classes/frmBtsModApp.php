@@ -11,6 +11,7 @@ class frmBtsModApp {
 		$defaults = array(
 			'id' => '', 'label' => __( '', 'frmmodal' ),
 			'type' => 'form', 'class' => '',
+			'size' => '',
 		);
 		$atts = array_merge( $defaults, $atts );
 
@@ -47,12 +48,16 @@ class frmBtsModApp {
 
 	public static function output_modal() {
 		global $frm_vars;
+		$allowed_sizes = array( 'small' => 'modal-sm', 'large' => 'modal-lg' );
+
 		if ( isset( $frm_vars['modals'] ) && is_array ( $frm_vars['modals'] ) ) {
 			foreach ( $frm_vars['modals'] as $i => $form_atts ) {
+				$size = isset( $allowed_sizes[ $form_atts['size'] ] ) ? $allowed_sizes[ $form_atts['size'] ] : '';
+
 				$modal = '<div id="frm-modal-' . esc_attr( $i ) . '"';
 				$modal .= ' class="modal fade" tabindex="-1" role="dialog"';
 				$modal .= ' aria-labelledby="frmModalLabel-' . esc_attr( $i ) . '" aria-hidden="true">';
-				$modal .= '<div class="modal-dialog">';
+				$modal .= '<div class="modal-dialog ' . esc_attr( $size ) . '">';
 				$modal .= '<div class="modal-content">';
 				$modal .= '<div class="modal-header">';
 				$modal .= '<a class="close frm_icon_font frm_cancel1_icon alignright" data-dismiss="modal" ></a>';
