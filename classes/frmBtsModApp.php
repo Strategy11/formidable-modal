@@ -9,9 +9,12 @@ class frmBtsModApp {
 
 	public static function insert_modal_link( $atts ) {
 		$defaults = array(
-			'id' => '', 'label' => __( '', 'frmmodal' ),
-			'type' => 'form', 'class' => '',
-			'size' => '',
+			'id'    => '',
+			'label' => '',
+			'modal_title' => '',
+			'type'  => 'form',
+			'class' => '',
+			'size'  => '',
 		);
 		$atts = array_merge( $defaults, $atts );
 
@@ -53,6 +56,7 @@ class frmBtsModApp {
 		if ( isset( $frm_vars['modals'] ) && is_array ( $frm_vars['modals'] ) ) {
 			foreach ( $frm_vars['modals'] as $i => $form_atts ) {
 				$size = isset( $allowed_sizes[ $form_atts['size'] ] ) ? $allowed_sizes[ $form_atts['size'] ] : '';
+				$title = empty( $form_atts['modal_title'] ) ? $form_atts['label'] : $form_atts['modal_title'];
 
 				$modal = '<div id="frm-modal-' . esc_attr( $i ) . '"';
 				$modal .= ' class="modal fade" tabindex="-1" role="dialog"';
@@ -61,7 +65,7 @@ class frmBtsModApp {
 				$modal .= '<div class="modal-content">';
 				$modal .= '<div class="modal-header">';
 				$modal .= '<a class="close frm_icon_font frm_cancel1_icon alignright" data-dismiss="modal" ></a>';
-				$modal .= '<h4 class="modal-title" id="frmModalLabel-' . esc_attr( $i ) . '">'. $form_atts['label'] .'</h4>';
+				$modal .= '<h4 class="modal-title" id="frmModalLabel-' . esc_attr( $i ) . '">'. $title .'</h4>';
 				$modal .= '</div>';
 				$modal .= '<div class="modal-body">';
 				if ( $form_atts['type'] == 'view' ) {
