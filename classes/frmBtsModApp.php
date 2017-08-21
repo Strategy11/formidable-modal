@@ -7,7 +7,27 @@ class frmBtsModApp {
 		add_action( 'admin_init', 'frmBtsModApp::load_autoupdater' );
 	}
 
-	public static function insert_modal_link( $atts ) {
+	public static function insert_modal_link( $atts, $content = '' ) {
+		self::prepare_atts( $atts );
+		if ( empty( $atts['label'] ) ) {
+			return '';
+		}
+
+		self::save_settings_for_footer( $atts, $content );
+		self::enqueue_scripts();
+
+		do_action( 'frm_modal_shortcode', $atts );
+		add_action( 'wp_footer', 'frmBtsModApp::output_modal' );
+
+		$classes = empty( $atts['class'] ) ? '' : ' class="' . esc_attr( $atts['class'] ) . '"';
+		$link = '<a href="#" data-toggle="modal" data-target="#frm-modal-' . esc_attr( $atts['modal_index'] ) . '"' . $classes . '>' . $atts['label'] . '</a>';
+		return $link;
+	}
+
+	/**
+	 * @since 2.0
+	 */
+	private static function prepare_atts( &$atts ) {
 		$defaults = array(
 			'id'    => '',
 			'label' => '',
@@ -19,24 +39,45 @@ class frmBtsModApp {
 		);
 		$atts = array_merge( $defaults, $atts );
 
-		if ( empty( $atts['label'] ) ) {
-			return '';
-		}
+		global $frm_vars;
+		$atts['modal_index'] = isset( $frm_vars['modals'] ) ? count( $frm_vars['modals'] ) : 0;
+	}
 
+	/**
+	 * @since 2.0
+	 */
+	private static function save_settings_for_footer( $atts, $content ) {
 		global $frm_vars;
 		if ( ! isset( $frm_vars['modals'] ) ) {
 			$frm_vars['modals'] = array();
 		}
+
+		if ( $content == '' ) {
+			$content = self::build_shortcode( $atts );
+		}
+
+		$atts['mod_content'] = $content;
 		$frm_vars['modals'][] = $atts;
+	}
 
-		self::enqueue_scripts();
-		do_action( 'frm_modal_shortcode', $atts );
-		add_action( 'wp_footer', 'frmBtsModApp::output_modal' );
+	/**
+	 * @since 2.0
+	 */
+	private static function build_shortcode( $atts ) {
+		if ( $atts['type'] == 'view' ) {
+			$atts['type'] = 'display-frm-data';
+		} else if ( $atts['type'] == 'form' ) {
+			$atts['type'] = 'formidable';
+		}
 
-		$classes = empty( $atts['class'] ) ? '' : ' class="' . esc_attr( $atts['class'] ) . '"';
-		$modal_index = count( $frm_vars['modals'] ) - 1;
-		$link = '<a href="#" data-toggle="modal" data-target="#frm-modal-' . esc_attr( $modal_index ) . '"' . $classes . '>' . $atts['label'] . '</a>';
-		return $link;
+		$shortcode_atts = '';
+		foreach ( $atts as $att => $val ) {
+			if ( $att != 'type' ) {
+				$shortcode_atts .= ' '. sanitize_text_field( $att . '="' . $val . '"' );
+			}
+		}
+
+		return '['. $atts['type'] . $shortcode_atts . ']';
 	}
 
 	public static function load_autoupdater() {
@@ -70,20 +111,7 @@ class frmBtsModApp {
 				$modal .= '<h4 class="modal-title" id="frmModalLabel-' . esc_attr( $i ) . '">'. $title .'</h4>';
 				$modal .= '</div>';
 				$modal .= '<div class="modal-body">';
-				if ( $form_atts['type'] == 'view' ) {
-					unset( $form_atts['type'] );
-					$modal .= FrmProDisplaysController::get_shortcode( $form_atts );
-				} else if ( $form_atts['type'] == 'form' ) {
-					$modal .= FrmFormsController::get_form_shortcode( $form_atts );
-				} else {
-					$shortcode_atts = '';
-					foreach ( $form_atts as $att => $val ) {
-						if ( $att != 'type' ) {
-							$shortcode_atts .= ' '. sanitize_text_field( $att . '="' . $val . '"' );
-						}
-					}
-					$modal .= do_shortcode( '['. $form_atts['type'] . $shortcode_atts . ']' );
-				}
+				$modal .= do_shortcode( $form_atts['mod_content'] );
 				$modal .= '</div>';
 				$modal .= '</div>';
 				$modal .= '</div>';
