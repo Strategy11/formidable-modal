@@ -4,6 +4,7 @@ class frmBtsModApp {
 
 	public function __construct() {
 		add_shortcode( 'frmmodal', 'frmBtsModApp::insert_modal_link' );
+		add_shortcode( 'frmmodal-content', 'frmBtsModApp::insert_modal_content_link' );
 		add_action( 'admin_init', 'frmBtsModApp::load_autoupdater' );
 	}
 
@@ -22,6 +23,13 @@ class frmBtsModApp {
 		$classes = empty( $atts['class'] ) ? '' : ' class="' . esc_attr( $atts['class'] ) . '"';
 		$link = '<a href="#" data-toggle="modal" data-target="#frm-modal-' . esc_attr( $atts['modal_index'] ) . '"' . $classes . '>' . $atts['label'] . '</a>';
 		return $link;
+	}
+
+	/**
+	 * @since 2.0
+	 */
+	public static function insert_modal_content_link( $atts, $content = '' ) {
+		return self::insert_modal_link( $atts, $content );
 	}
 
 	/**
