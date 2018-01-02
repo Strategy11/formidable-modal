@@ -22,7 +22,7 @@ class frmBtsModApp {
 
 		$classes = empty( $atts['class'] ) ? '' : ' class="' . esc_attr( $atts['class'] ) . '"';
 		$link = '<a href="#" data-toggle="modal" data-target="#frm-modal-' . esc_attr( $atts['modal_index'] ) . '"' . $classes . '>' . $atts['label'] . '</a>';
-		return $link;
+		return apply_filters( 'frm_modal_link', $link, $atts );
 	}
 
 	/**
