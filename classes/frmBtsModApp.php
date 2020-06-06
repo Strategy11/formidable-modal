@@ -97,7 +97,7 @@ class frmBtsModApp {
 	public static function enqueue_scripts() {
 		$plugin_url = plugins_url() .'/'. basename( dirname( dirname( __FILE__ ) ) );
 		wp_enqueue_script( 'bootstrap', $plugin_url .'/js/bootstrap.min.js', array( 'jquery' ) );
-	    wp_enqueue_style( 'bootstrap', $plugin_url .'/css/bootstrap.css' );
+		wp_enqueue_style( 'bootstrap', $plugin_url .'/css/bootstrap.min.css' );
 	}
 
 	public static function output_modal() {
