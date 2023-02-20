@@ -1,0 +1,14 @@
+{
+	"name": "frm-modal",
+	"version": "0.1.0",
+	"description": "Example block scaffolded with Create Block tool.",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"main": "blocks-src/index.js",
+	"scripts": {
+		"build": "wp-scripts build --output-path=blocks --webpack-src-dir=blocks-src"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "25.4.0"
+	}
+}

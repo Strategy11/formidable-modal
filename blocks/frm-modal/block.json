@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "frm-modal/frm-modal",
+  "version": "0.1.0",
+  "title": "Formidable Modal",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "frmmodal",
+  "editorScript": "file:./index.js",
+  "style": "file:./index.css"
+}

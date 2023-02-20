@@ -6,6 +6,30 @@ class frmBtsModApp {
 		add_shortcode( 'frmmodal', 'frmBtsModApp::insert_modal_link' );
 		add_shortcode( 'frmmodal-content', 'frmBtsModApp::insert_modal_content_link' );
 		add_action( 'admin_init', 'frmBtsModApp::load_autoupdater' );
+
+		add_action( 'init', 'frmBtsModBlockController::init_block' );
+	}
+
+	/**
+	 * Gets plugin path.
+	 *
+	 * @since x.x
+	 *
+	 * @return string
+	 */
+	public static function plugin_path() {
+		return dirname( dirname( __FILE__ ) );
+	}
+
+	/**
+	 * Gets plugin URL.
+	 *
+	 * @since x.x
+	 *
+	 * @return string
+	 */
+	public static function plugin_url() {
+		return plugins_url( '', self::plugin_path() . '/formidable-modal.php' );
 	}
 
 	public static function insert_modal_link( $atts, $content = '' ) {

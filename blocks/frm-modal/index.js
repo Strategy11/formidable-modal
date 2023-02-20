@@ -1,0 +1,1 @@
+!function(){"use strict";var e=window.wp.blocks,t=window.wp.element,o=window.wp.blockEditor,r=JSON.parse('{"u2":"frm-modal/frm-modal"}');(0,e.registerBlockType)(r.u2,{edit:function(){return(0,t.createElement)("p",(0,o.useBlockProps)(),"Test")},save:function(){return(0,t.createElement)("p",o.useBlockProps.save(),"This is a test.")}})}();
