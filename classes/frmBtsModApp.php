@@ -2,6 +2,15 @@
 
 class frmBtsModApp {
 
+	/**
+	 * Plugin version.
+	 *
+	 * @since 2.1
+	 *
+	 * @var string
+	 */
+	public static $version = '2.1';
+
 	public function __construct() {
 		add_shortcode( 'frmmodal', 'frmBtsModApp::insert_modal_link' );
 		add_shortcode( 'frmmodal-content', 'frmBtsModApp::insert_modal_content_link' );
@@ -45,7 +54,8 @@ class frmBtsModApp {
 		add_action( 'wp_footer', 'frmBtsModApp::output_modal' );
 
 		$classes = empty( $atts['class'] ) ? '' : ' class="' . esc_attr( $atts['class'] ) . '"';
-		$link = '<a href="#" data-toggle="modal" data-target="#frm-modal-' . esc_attr( $atts['modal_index'] ) . '"' . $classes . '>' . $atts['label'] . '</a>';
+		$target  = '#frm-modal-' . $atts['modal_index'];
+		$link = '<a href="#" data-toggle="modal" data-bs-toggle="modal" data-target="' . esc_attr( $target ) . '" data-bs-target="' . esc_attr( $target ) . '"' . $classes . '>' . $atts['label'] . '</a>';
 		return apply_filters( 'frm_modal_link', $link, $atts );
 	}
 
@@ -120,8 +130,8 @@ class frmBtsModApp {
 
 	public static function enqueue_scripts() {
 		$plugin_url = plugins_url() .'/'. basename( dirname( dirname( __FILE__ ) ) );
-		wp_enqueue_script( 'bootstrap', $plugin_url .'/js/bootstrap.min.js', array( 'jquery' ) );
-		wp_enqueue_style( 'bootstrap', $plugin_url .'/css/bootstrap.min.css' );
+		wp_enqueue_script( 'frm-bootstrap-modal', $plugin_url .'/js/bootstrap-modal.min.js', array(), self::$version, true );
+		wp_enqueue_style( 'frm-bootstrap-modal', $plugin_url .'/css/bootstrap-modal.css', array(), self::$version );
 	}
 
 	public static function output_modal() {

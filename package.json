@@ -6,7 +6,8 @@
 	"license": "GPL-2.0-or-later",
 	"main": "blocks-src/index.js",
 	"scripts": {
-		"build": "wp-scripts build --output-path=blocks --webpack-src-dir=blocks-src"
+		"build": "wp-scripts build --output-path=blocks --webpack-src-dir=blocks-src",
+		"build-bootstrap": "wp-scripts build --output-path=js-dist --webpack-src-dir=js-src"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "25.4.0"
