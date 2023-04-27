@@ -5,5 +5,12 @@ import metadata from './block.json';
 
 registerBlockType( metadata.name, {
 	edit: Edit,
-	save
+	save,
+	attributes: {
+		content: {
+			type: 'string',
+			source: 'html',
+			selector: 'p',
+		}
+	}
 });

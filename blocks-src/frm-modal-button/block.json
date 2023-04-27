@@ -1,25 +1,15 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "frm-modal/modal",
-  "title": "Formidable Modal",
+  "name": "frm-modal/modal-button",
+  "title": "Formidable Modal Button",
   "category": "widgets",
   "description": "Prompt visitors to take action with a button-style link.",
-  "keywords": [
-    "link"
-  ],
   "textdomain": "frmmodal",
   "editorScript": "file:./index.js",
   "attributes": {
     "textAlign": {
       "type": "string"
-    },
-    "url": {
-      "type": "string",
-      "source": "attribute",
-      "selector": "a",
-      "attribute": "href",
-      "__experimentalRole": "content"
     },
     "title": {
       "type": "string",
@@ -32,20 +22,6 @@
       "type": "string",
       "source": "html",
       "selector": "a",
-      "__experimentalRole": "content"
-    },
-    "linkTarget": {
-      "type": "string",
-      "source": "attribute",
-      "selector": "a",
-      "attribute": "target",
-      "__experimentalRole": "content"
-    },
-    "rel": {
-      "type": "string",
-      "source": "attribute",
-      "selector": "a",
-      "attribute": "rel",
       "__experimentalRole": "content"
     },
     "placeholder": {
@@ -65,7 +41,6 @@
     }
   },
   "supports": {
-    "anchor": true,
     "align": false,
     "alignWide": false,
     "color": {
@@ -93,10 +68,7 @@
     "shadow": true,
     "spacing": {
       "__experimentalSkipSerialization": true,
-      "padding": [
-        "horizontal",
-        "vertical"
-      ],
+      "padding": [ "horizontal", "vertical" ],
       "__experimentalDefaultControls": {
         "padding": true
       }
@@ -117,15 +89,8 @@
     "__experimentalSelector": ".wp-block-button .wp-block-button__link"
   },
   "styles": [
-    {
-      "name": "fill",
-      "label": "Fill",
-      "isDefault": true
-    },
-    {
-      "name": "outline",
-      "label": "Outline"
-    }
+    { "name": "fill", "label": "Fill", "isDefault": true },
+    { "name": "outline", "label": "Outline" }
   ],
   "editorStyle": "wp-block-button-editor",
   "style": "wp-block-button"

@@ -1,9 +1,48 @@
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, InspectorControls, RichText, InnerBlocks } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
+import {
+	TextControl,
+	RadioControl,
+	Panel,
+	PanelBody,
+	PanelRow,
+	Button,
+	ButtonGroup,
+	BlockStyles,
+	DefaultStylePicker,
+	AlignmentControl,
+	BlockControls
+} from '@wordpress/components';
 
-export default function Edit() {
+const MY_TEMPLATE = [
+	[ 'core/button', {
+		lock: false,
+		attributes: {
+			rel: false,
+		}
+	} ],
+	[ 'core/group', {
+		tagName: 'div',
+		layout: 'constrained'
+	} ],
+];
+
+export default function Edit( { attributes, setAttributes } ) {
+	const { buttonWidth, buttonStyle, buttonText } = attributes;
+
+	const setButtonText = ( newText ) => {
+		// Remove anchor tags from button text content.
+		setAttributes( { text: newText.replace( /<\/?a[^>]*>/g, '' ) } );
+	}
+
 	return (
-		<p { ...useBlockProps() }>
-			Test
-		</p>
+		<>
+			<div { ...useBlockProps() }>
+				<InnerBlocks
+					template={ MY_TEMPLATE }
+					templateLock="all"
+				/>
+			</div>
+		</>
 	);
 }
