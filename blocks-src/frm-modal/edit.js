@@ -16,25 +16,30 @@ import {
 
 const MY_TEMPLATE = [
 	[ 'core/button', {
-		lock: false,
-		attributes: {
-			rel: false,
-		}
+		rel: false
 	} ],
-	[ 'core/group', {
-		tagName: 'div',
-		layout: 'constrained'
-	} ],
+	[
+		'core/group',
+		{
+			tagName: 'div',
+			templateLock: false,
+			layout: {
+				type: 'constrained'
+			}
+		},
+		[
+			[
+				'core/heading',
+				{
+					level: 2,
+					content: 'Modal heading'
+				}
+			]
+		]
+	],
 ];
 
 export default function Edit( { attributes, setAttributes } ) {
-	const { buttonWidth, buttonStyle, buttonText } = attributes;
-
-	const setButtonText = ( newText ) => {
-		// Remove anchor tags from button text content.
-		setAttributes( { text: newText.replace( /<\/?a[^>]*>/g, '' ) } );
-	}
-
 	return (
 		<>
 			<div { ...useBlockProps() }>

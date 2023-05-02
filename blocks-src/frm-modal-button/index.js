@@ -22,10 +22,5 @@ const Edit = props => {
 };
 
 registerBlockType( metadata.name, {
-	edit: Edit,
-	save: ( { attributes } ) => {
-		return (
-			<div>{ JSON.stringify( attributes ) }</div>
-		);
-	}
+	edit: Edit
 });
