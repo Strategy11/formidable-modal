@@ -1,26 +1,51 @@
+/**
+ * WordPress dependencies
+ */
+import { __ } from '@wordpress/i18n';
+import { button as icon } from '@wordpress/icons';
 import { registerBlockType } from '@wordpress/blocks';
+
+/**
+ * Internal dependencies
+ */
+import edit from './edit';
 import metadata from './block.json';
-import { useSelect } from '@wordpress/data';
-import { createHigherOrderComponent } from '@wordpress/compose';
-import { InspectorControls } from '@wordpress/block-editor';
+import save from './save';
+console.log( metadata );
 
-const Edit = props => {
-	const { attributes, setAttributes, isSelected } = props;
 
-	const { WPButton } = useSelect( select => ( {
-		WPButton: select( 'core/blocks' ).getBlockType( 'core/button' ),
-	} ) );
+const ALLOWED_BLOCKS_GRADIENT_SUPPORT = [ 'frm-modal/modal-button' ];
 
-	return (
-		<>
-			<WPButton.edit { ...props } />
-			<InspectorControls>
-				Test
-			</InspectorControls>
-		</>
-	);
-};
+const { name } = metadata;
 
-registerBlockType( metadata.name, {
-	edit: Edit
-});
+registerBlockType(
+	{
+		name,
+		...metadata,
+		// Gradients support only available for blocks listed in ALLOWED_BLOCKS_GRADIENT_SUPPORT.
+		...( ! ALLOWED_BLOCKS_GRADIENT_SUPPORT.includes( name ) &&
+		supports?.color?.gradients
+			? {
+				supports: {
+					...supports,
+					color: { ...supports.color, gradients: false },
+				},
+			}
+			: {} ),
+	},
+	{
+		icon,
+		example: {
+			attributes: {
+				className: 'is-style-fill',
+				text: __( 'Call to Action' ),
+			},
+		},
+		edit,
+		save,
+		merge: ( a, { text = '' } ) => ( {
+			...a,
+			text: ( a.text || '' ) + text,
+		} ),
+	}
+);

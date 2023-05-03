@@ -1,15 +1,13 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "frm-modal/modal-button",
-  "title": "Frm Modal Button",
+  "name": "frm-modal/modal",
+  "title": "Formidable Modal",
   "category": "widgets",
   "description": "Prompt visitors to take action with a button-style link.",
-  "keywords": [
-    "link"
-  ],
-  "editorScript": "file:./index.js",
+  "keywords": [ "link" ],
   "textdomain": "frmmodal",
+  "editorScript": "file:./index.js",
   "attributes": {
     "textAlign": {
       "type": "string"
@@ -32,6 +30,13 @@
       "type": "string",
       "source": "html",
       "selector": "a",
+      "__experimentalRole": "content"
+    },
+    "linkTarget": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "a",
+      "attribute": "target",
       "__experimentalRole": "content"
     },
     "rel": {
@@ -58,7 +63,7 @@
     }
   },
   "supports": {
-    "anchor": false,
+    "anchor": true,
     "align": false,
     "alignWide": false,
     "color": {
@@ -86,10 +91,7 @@
     "shadow": true,
     "spacing": {
       "__experimentalSkipSerialization": true,
-      "padding": [
-        "horizontal",
-        "vertical"
-      ],
+      "padding": [ "horizontal", "vertical" ],
       "__experimentalDefaultControls": {
         "padding": true
       }
@@ -107,19 +109,12 @@
         "width": true
       }
     },
-    "__experimentalSelector": ".wp-block-frm-modal-button .wp-block-frm-modal-button__link"
+    "__experimentalSelector": ".wp-block-button .wp-block-button__link"
   },
   "styles": [
-    {
-      "name": "fill",
-      "label": "Fill",
-      "isDefault": true
-    },
-    {
-      "name": "outline",
-      "label": "Outline"
-    }
+    { "name": "fill", "label": "Fill", "isDefault": true },
+    { "name": "outline", "label": "Outline" }
   ],
-  "editorStyle": "wp-block-frm-modal-button-editor",
-  "style": "wp-block-frm-modal-button"
+  "editorStyle": "wp-block-button-editor",
+  "style": "wp-block-button"
 }

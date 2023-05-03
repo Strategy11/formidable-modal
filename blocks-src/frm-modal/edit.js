@@ -15,14 +15,25 @@ import {
 } from '@wordpress/components';
 
 const MY_TEMPLATE = [
-	[ 'core/button', {
-		rel: false
-	} ],
+	[
+		'core/button',
+		{
+			rel: false,
+			lock: {
+				move: true,
+				remove: true
+			}
+		}
+	],
 	[
 		'core/group',
 		{
 			tagName: 'div',
 			templateLock: false,
+			lock: {
+				move: true,
+				remove: true
+			},
 			layout: {
 				type: 'constrained'
 			}
@@ -37,6 +48,15 @@ const MY_TEMPLATE = [
 			]
 		]
 	],
+];
+
+const MODAL_TEMPLATE = [
+	[ 'core/button', {
+		lock: {
+			move: false,
+			remove: false
+		}
+	} ],
 ];
 
 export default function Edit( { attributes, setAttributes } ) {
