@@ -1,7 +1,7 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "frm-modal/modal-button",
+	"name": "frm-modal/button",
 	"title": "Frm Modal Button",
 	"category": "widgets",
 	"description": "Prompt visitors to take action with a button-style link.",

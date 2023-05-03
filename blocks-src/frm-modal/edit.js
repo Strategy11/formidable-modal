@@ -16,14 +16,24 @@ import {
 
 const MY_TEMPLATE = [
 	[
-		'core/button',
+		'core/buttons',
 		{
-			rel: false,
 			lock: {
 				move: true,
 				remove: true
 			}
-		}
+		},
+		[
+			[
+				'frm-modal/button',
+				{
+					lock: {
+						move: true,
+						remove: true
+					}
+				}
+			]
+		]
 	],
 	[
 		'core/group',

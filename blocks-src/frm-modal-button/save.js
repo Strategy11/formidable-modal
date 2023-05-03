@@ -37,6 +37,7 @@ export default function save( { attributes, className } ) {
 	const spacingProps = getSpacingClassesAndStyles( attributes );
 	const buttonClasses = classnames(
 		'wp-block-frm-modal-button__link',
+		'wp-block-button__link',
 		colorProps.className,
 		borderProps.className,
 		{
@@ -57,8 +58,8 @@ export default function save( { attributes, className } ) {
 	// if it had already been assigned, for the sake of backward-compatibility.
 	// A title will no longer be assigned for new or updated button block links.
 
-	const wrapperClasses = classnames( className, {
-		[ `has-custom-width wp-block-frm-modal-button__width-${ width }` ]: width,
+	const wrapperClasses = classnames( className, 'wp-block-button', {
+		[ `has-custom-width wp-block-button__width-${ width }` ]: width,
 		[ `has-custom-font-size` ]: fontSize || style?.typography?.fontSize,
 	} );
 

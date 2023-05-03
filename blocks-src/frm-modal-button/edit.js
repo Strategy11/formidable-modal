@@ -153,8 +153,8 @@ function ButtonEdit( props ) {
 		<>
 			<div
 				{ ...blockProps }
-				className={ classnames( blockProps.className, {
-					[ `has-custom-width wp-block-frm-modal-button__width-${ width }` ]:
+				className={ classnames( blockProps.className, 'wp-block-button', {
+					[ `has-custom-width wp-block-button__width-${ width }` ]:
 						width,
 					[ `has-custom-font-size` ]: blockProps.style.fontSize,
 				} ) }
@@ -169,6 +169,7 @@ function ButtonEdit( props ) {
 					className={ classnames(
 						className,
 						'wp-block-frm-modal-button__link',
+						'wp-block-button__link',
 						colorProps.className,
 						borderProps.className,
 						{

@@ -11,10 +11,9 @@ import { registerBlockType } from '@wordpress/blocks';
 import edit from './edit';
 import metadata from './block.json';
 import save from './save';
-console.log( metadata );
 
 
-const ALLOWED_BLOCKS_GRADIENT_SUPPORT = [ 'frm-modal/modal-button' ];
+const ALLOWED_BLOCKS_GRADIENT_SUPPORT = [ 'frm-modal/button' ];
 
 const { name } = metadata;
 
