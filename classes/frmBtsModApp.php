@@ -43,7 +43,7 @@ class frmBtsModApp {
 
 	public static function insert_modal_link( $atts, $content = '' ) {
 		self::prepare_atts( $atts );
-		if ( empty( $atts['label'] ) ) {
+		if ( empty( $atts['label'] ) && empty( $atts['button_html'] ) ) {
 			return '';
 		}
 
@@ -53,10 +53,25 @@ class frmBtsModApp {
 		do_action( 'frm_modal_shortcode', $atts );
 		add_action( 'wp_footer', 'frmBtsModApp::output_modal' );
 
-		$classes = empty( $atts['class'] ) ? '' : ' class="' . esc_attr( $atts['class'] ) . '"';
-		$target  = '#frm-modal-' . $atts['modal_index'];
-		$link = '<a href="#" data-toggle="modal" data-bs-toggle="modal" data-target="' . esc_attr( $target ) . '" data-bs-target="' . esc_attr( $target ) . '"' . $classes . '>' . $atts['label'] . '</a>';
+		if ( ! empty( $atts['button_html'] ) ) {
+			$link = $atts['button_html'];
+		} else {
+			$classes = empty( $atts['class'] ) ? '' : ' class="' . esc_attr( $atts['class'] ) . '"';
+			$link    = '<a href="#"' . $classes . '>' . $atts['label'] . '</a>';
+		}
+
+		$link = self::maybe_add_modal_attrs_to_button( $link, $atts );
+
 		return apply_filters( 'frm_modal_link', $link, $atts );
+	}
+
+	private static function get_modal_button_attrs( $atts ) {
+		$target  = '#frm-modal-' . $atts['modal_index'];
+		return 'data-toggle="modal" data-bs-toggle="modal" data-target="' . esc_attr( $target ) . '" data-bs-target="' . esc_attr( $target ) . '"';
+	}
+
+	private static function maybe_add_modal_attrs_to_button( $button_html, $atts ) {
+		return str_replace( '<a', '<a ' . self::get_modal_button_attrs( $atts ), $button_html );
 	}
 
 	/**

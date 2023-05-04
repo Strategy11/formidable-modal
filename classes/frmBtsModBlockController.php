@@ -19,22 +19,13 @@ class frmBtsModBlockController {
 	}
 
 	public static function render_modal_block( $attrs, $content ) {
-		$exploded_content = 
-		ob_start();
-//		var_dump( $attrs );
-//		var_dump( $content );
-		$blocks = parse_blocks( $content );
-		if ( ! empty( $blocks[0]['innerHTML'] ) ) {
-			$inner_blocks = parse_blocks( $blocks[0]['innerHTML'] );
+		$exploded_content = self::extract_block_content( $content );
+		if ( ! $exploded_content ) {
+			return $content;
 		}
-		$sep = '<div class="wp-block-frm-modal-content';
-		$exploded_content = explode( $sep, $content );
-		$button_html      = $exploded_content[0];
-		$modal_html       = $sep . $exploded_content[1];
-//		echo esc_html( $content );
-		echo $button_html;
-//		var_dump( $inner_blocks );
-		return ob_get_clean();
+
+		// TODO: process the first arg.
+		return frmBtsModApp::insert_modal_link( array( 'button_html' => $exploded_content[0] ), $exploded_content[1] );
 	}
 
 	/**
@@ -52,11 +43,5 @@ class frmBtsModBlockController {
 		}
 
 		return array( $exploded_content[0], $sep . $exploded_content[1] );
-	}
-
-	private static function add_modal_attrs_to_button( $button ) {
-		$attrs = '';
-
-		return str_replace( '<a', '<a ' . $attrs, $button );
 	}
 }
