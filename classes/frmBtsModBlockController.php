@@ -19,6 +19,7 @@ class frmBtsModBlockController {
 	}
 
 	public static function render_modal_block( $attrs, $content ) {
+		$exploded_content = 
 		ob_start();
 //		var_dump( $attrs );
 //		var_dump( $content );
@@ -34,5 +35,28 @@ class frmBtsModBlockController {
 		echo $button_html;
 //		var_dump( $inner_blocks );
 		return ob_get_clean();
+	}
+
+	/**
+	 * Extracts the block content to get the button and modal content.
+	 *
+	 * @param string $content Formidable modal block content.
+	 * @return array|false The first item is the button, the second is the modal content. Returns `false` if can't invalid content.
+	 */
+	private static function extract_block_content( $content ) {
+		$sep = '<div class="wp-block-frm-modal-content';
+
+		$exploded_content = explode( $sep, $content );
+		if ( ! $exploded_content || 2 !== count( $exploded_content ) ) {
+			return false;
+		}
+
+		return array( $exploded_content[0], $sep . $exploded_content[1] );
+	}
+
+	private static function add_modal_attrs_to_button( $button ) {
+		$attrs = '';
+
+		return str_replace( '<a', '<a ' . $attrs, $button );
 	}
 }
