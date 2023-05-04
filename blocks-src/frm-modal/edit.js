@@ -1,4 +1,4 @@
-import { useBlockProps, InspectorControls, RichText, InnerBlocks } from '@wordpress/block-editor';
+import { useBlockProps, useInnerBlocksProps, InspectorControls, RichText, InnerBlocks } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import {
 	TextControl,
@@ -36,27 +36,8 @@ const MY_TEMPLATE = [
 		]
 	],
 	[
-		'core/group',
-		{
-			tagName: 'div',
-			templateLock: false,
-			lock: {
-				move: true,
-				remove: true
-			},
-			layout: {
-				type: 'constrained'
-			}
-		},
-		[
-			[
-				'core/heading',
-				{
-					level: 2,
-					content: 'Modal heading'
-				}
-			]
-		]
+		'frm-modal/content',
+		{}
 	],
 ];
 

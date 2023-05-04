@@ -4,6 +4,9 @@
   "name": "frm-modal/button",
   "title": "Frm Modal Button",
   "category": "widgets",
+  "parent": [
+    "frm-modal/modal"
+  ],
   "description": "Prompt visitors to take action with a button-style link.",
   "keywords": [
     "link"
@@ -61,6 +64,8 @@
     "anchor": false,
     "align": false,
     "alignWide": false,
+    "inserter": false,
+    "lock": false,
     "color": {
       "__experimentalSkipSerialization": true,
       "gradients": true,
