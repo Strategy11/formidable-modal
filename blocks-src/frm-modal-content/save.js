@@ -16,7 +16,7 @@ export default function save( { attributes } ) {
 					<div className="modal-content">
 						<ModalHeader title={ attributes.title } />
 
-						<div className="frm_modal_body">
+						<div className="modal-body">
 							<div { ...innerBlocksProps } />
 						</div>
 					</div>

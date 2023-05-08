@@ -48,26 +48,26 @@
       }
     },
     "spacing": {
-      "padding": true,
-      "blockGap": true,
+      "padding": false,
+      "blockGap": false,
       "__experimentalDefaultControls": {
-        "padding": true,
-        "blockGap": true
+        "padding": false,
+        "blockGap": false
       }
     },
     "dimensions": {
       "minHeight": false
     },
     "__experimentalBorder": {
-      "color": true,
-      "radius": true,
-      "style": true,
-      "width": true,
+      "color": false,
+      "radius": false,
+      "style": false,
+      "width": false,
       "__experimentalDefaultControls": {
-        "color": true,
-        "radius": true,
-        "style": true,
-        "width": true
+        "color": false,
+        "radius": false,
+        "style": false,
+        "width": false
       }
     },
     "typography": {
@@ -87,6 +87,6 @@
       "allowSizingOnChildren": true
     }
   },
-  "editorStyle": "wp-block-group-editor",
-  "style": "wp-block-group"
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
 }

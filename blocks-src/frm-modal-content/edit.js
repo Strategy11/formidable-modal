@@ -69,19 +69,19 @@ function GroupEdit( {
 			<div { ...blockProps }>
 				<div className={ getModalDialogClassNames( attributes ) } data-size={ attributes.size }>
 					<div className="modal-content">
-						<div className="frm_modal_header">
+						<div className="modal-header">
 							<CloseButton />
 
 							<RichText
 								tagName="div"
-								className="frm_modal_title"
+								className="modal-title"
 								value={ attributes.title }
 								onChange={ title => setAttributes( { title } ) }
 								placeholder={ __( 'Modal title', 'frmmodal' ) }
 							/>
 						</div>
 
-						<div className="frm_modal_body">
+						<div className="modal-body">
 							<div { ...innerBlocksProps } />
 						</div>
 					</div>
