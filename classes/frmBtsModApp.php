@@ -111,10 +111,52 @@ class frmBtsModApp {
 
 		if ( $content == '' ) {
 			$content = self::build_shortcode( $atts );
+		} elseif ( ! empty( $atts['skip_modal_wrapper'] ) ) {
+			$content = self::add_modal_content_wrapper_attrs( $content, $atts );
 		}
 
 		$atts['mod_content'] = $content;
 		$frm_vars['modals'][] = $atts;
+	}
+
+	/**
+	 * Adds Bootstrap modal attributes to the wrapper elements if "skip_modal_wrapper" is true. This is used in case the
+	 * full modal HTML is passed instead of just the content.
+	 *
+	 * @since x.x
+	 *
+	 * @param string $content The modal content passed to the shortcode.
+	 * @param array  $atts    Shortcode attributes.
+	 * @return string
+	 */
+	private static function add_modal_content_wrapper_attrs( $content, $atts ) {
+		$content = str_replace(
+			'<div class="wp-block-frm-modal-content',
+			'<div ' . self::get_modal_wrapper_attrs( $atts ) . ' class="modal fade wp-block-frm-modal-content',
+			$content
+		);
+
+		$content = str_replace(
+			'class="modal-title"',
+			'class="modal-title" id="frmModalLabel-' . intval( $atts['modal_index'] ) . '"',
+			$content
+		);
+
+		error_log( $content );
+
+		return $content;
+	}
+
+	private static function get_modal_wrapper_attrs( $atts ) {
+		$attrs = array(
+			'id' => 'frm-modal-' . intval( $atts['modal_index'] ),
+			'tabindex' => -1,
+			'role'     => 'dialog',
+			'aria-labelledby' => 'frmModalLabel-' . intval( $atts['modal_index'] ),
+			'aria-hidden'     => 'true',
+		);
+
+		return FrmAppHelper::array_to_html_params( $attrs );
 	}
 
 	/**
@@ -155,24 +197,28 @@ class frmBtsModApp {
 
 		if ( isset( $frm_vars['modals'] ) && is_array ( $frm_vars['modals'] ) ) {
 			foreach ( $frm_vars['modals'] as $i => $form_atts ) {
-				$size = isset( $allowed_sizes[ $form_atts['size'] ] ) ? $allowed_sizes[ $form_atts['size'] ] : '';
-				$title = empty( $form_atts['modal_title'] ) ? $form_atts['label'] : $form_atts['modal_title'];
+				if ( ! empty( $form_atts['skip_modal_wrapper'] ) ) {
+					$modal = do_shortcode( $form_atts['mod_content'] );
+				} else {
+					$size = isset( $allowed_sizes[ $form_atts['size'] ] ) ? $allowed_sizes[ $form_atts['size'] ] : '';
+					$title = empty( $form_atts['modal_title'] ) ? $form_atts['label'] : $form_atts['modal_title'];
 
-				$modal = '<div id="frm-modal-' . esc_attr( $i ) . '"';
-				$modal .= ' class="modal fade ' . esc_attr( $form_atts['modal_class'] ) . '" tabindex="-1" role="dialog"';
-				$modal .= ' aria-labelledby="frmModalLabel-' . esc_attr( $i ) . '" aria-hidden="true">';
-				$modal .= '<div class="modal-dialog ' . esc_attr( $size ) . '">';
-				$modal .= '<div class="modal-content">';
-				$modal .= '<div class="modal-header">';
-				$modal .= '<a class="close frm_icon_font frm_cancel1_icon alignright" data-dismiss="modal" ></a>';
-				$modal .= '<h4 class="modal-title" id="frmModalLabel-' . esc_attr( $i ) . '">'. $title .'</h4>';
-				$modal .= '</div>';
-				$modal .= '<div class="modal-body">';
-				$modal .= do_shortcode( $form_atts['mod_content'] );
-				$modal .= '</div>';
-				$modal .= '</div>';
-				$modal .= '</div>';
-				$modal .= '</div>';
+					$modal = '<div id="frm-modal-' . esc_attr( $i ) . '"';
+					$modal .= ' class="modal fade ' . esc_attr( $form_atts['modal_class'] ) . '" tabindex="-1" role="dialog"';
+					$modal .= ' aria-labelledby="frmModalLabel-' . esc_attr( $i ) . '" aria-hidden="true">';
+					$modal .= '<div class="modal-dialog ' . esc_attr( $size ) . '">';
+					$modal .= '<div class="modal-content">';
+					$modal .= '<div class="modal-header">';
+					$modal .= '<a class="close frm_icon_font frm_cancel1_icon alignright" data-dismiss="modal" ></a>';
+					$modal .= '<h4 class="modal-title" id="frmModalLabel-' . esc_attr( $i ) . '">'. $title .'</h4>';
+					$modal .= '</div>';
+					$modal .= '<div class="modal-body">';
+					$modal .= do_shortcode( $form_atts['mod_content'] );
+					$modal .= '</div>';
+					$modal .= '</div>';
+					$modal .= '</div>';
+					$modal .= '</div>';
+				}
 				echo $modal;
 			}
 		}

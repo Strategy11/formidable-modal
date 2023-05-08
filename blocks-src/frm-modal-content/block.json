@@ -10,6 +10,17 @@
   "editorScript": "file:./index.js",
   "textdomain": "frmmodal",
 	"attributes": {
+    "title": {
+      "type": "string",
+      "source": "html",
+      "selector": ".modal-title"
+    },
+    "size": {
+      "type": "string",
+      "source": "attribute",
+      "selector": ".modal-dialog",
+      "attribute": "data-size"
+    },
 		"allowedBlocks": {
 			"type": "array"
 		}
@@ -38,7 +49,7 @@
 			}
 		},
 		"dimensions": {
-			"minHeight": true
+			"minHeight": false
 		},
 		"__experimentalBorder": {
 			"color": true,

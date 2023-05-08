@@ -10,7 +10,8 @@
   "supports": {
     "html": false,
     "defaultStylePicker": true,
-    "dimensions": true
+    "dimensions": true,
+    "customClassName": false
   },
   "textdomain": "frmmodal",
   "editorScript": "file:./index.js",

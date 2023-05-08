@@ -3,6 +3,26 @@
  */
 import { useInnerBlocksProps, useBlockProps } from '@wordpress/block-editor';
 
-export default function save() {
+import { ModalHeader, getModalDialogClassNames } from './helpers';
+
+export default function save( { attributes } ) {
+	const blockProps = useBlockProps.save();
+	const innerBlocksProps = useInnerBlocksProps.save();
+
+	return (
+		<>
+			<div { ...blockProps }>
+				<div className={ getModalDialogClassNames( attributes ) } data-size={ attributes.size }>
+					<div className="modal-content">
+						<ModalHeader title={ attributes.title } />
+
+						<div className="frm_modal_body">
+							<div { ...innerBlocksProps } />
+						</div>
+					</div>
+				</div>
+			</div>
+		</>
+	)
 	return <div { ...useInnerBlocksProps.save( useBlockProps.save() ) } />;
 }

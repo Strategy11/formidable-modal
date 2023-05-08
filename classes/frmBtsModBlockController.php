@@ -24,8 +24,13 @@ class frmBtsModBlockController {
 			return $content;
 		}
 
-		// TODO: process the first arg.
-		return frmBtsModApp::insert_modal_link( array( 'button_html' => $exploded_content[0] ), $exploded_content[1] );
+		return frmBtsModApp::insert_modal_link(
+			array(
+				'button_html'        => $exploded_content[0],
+				'skip_modal_wrapper' => true,
+			),
+			$exploded_content[1]
+		);
 	}
 
 	/**
