@@ -36,7 +36,7 @@
 			"gradients": true,
 			"link": true,
 			"__experimentalDefaultControls": {
-				"background": true,
+				"background": false,
 				"text": true
 			}
 		},
