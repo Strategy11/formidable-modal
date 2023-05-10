@@ -7,6 +7,8 @@
  * Author URI: http://strategy11.com
  * Author: Strategy11
  * Text Domain: frmmodal
+ *
+ * @package FrmBtsModal
  */
 
 /**
@@ -16,7 +18,7 @@
  */
 function frm_btsmod_autoloader( $class_name ) {
 
-	// Only load Frm classes here
+	// Only load Frm classes here.
 	if ( ! preg_match( '/^frmBtsMod.+$/', $class_name ) ) {
 		return;
 	}

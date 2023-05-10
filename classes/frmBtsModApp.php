@@ -1,7 +1,7 @@
 <?php
-/**
- * Class frmBtsModApp
- */
+if ( ! defined( 'ABSPATH' ) ) {
+	die( 'You are not allowed to call this page directly.' );
+}
 
 /**
  * Class frmBtsModApp
