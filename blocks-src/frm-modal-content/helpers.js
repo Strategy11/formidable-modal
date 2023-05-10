@@ -6,9 +6,9 @@ export const CloseButton = () => (
 
 export const ModalHeader = ( { title } ) => (
 	<div className="modal-header">
-		<CloseButton />
-
 		<h4 className="modal-title">{ title }</h4>
+
+		<CloseButton />
 	</div>
 );
 

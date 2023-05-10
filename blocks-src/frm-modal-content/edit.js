@@ -70,8 +70,6 @@ function GroupEdit( {
 				<div className={ getModalDialogClassNames( attributes ) } data-size={ attributes.size }>
 					<div className="modal-content">
 						<div className="modal-header">
-							<CloseButton />
-
 							<RichText
 								tagName="div"
 								className="modal-title"
@@ -79,6 +77,8 @@ function GroupEdit( {
 								onChange={ title => setAttributes( { title } ) }
 								placeholder={ __( 'Modal title', 'frmmodal' ) }
 							/>
+
+							<CloseButton />
 						</div>
 
 						<div className="modal-body">
