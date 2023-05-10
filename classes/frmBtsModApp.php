@@ -1,5 +1,11 @@
 <?php
+/**
+ * Class frmBtsModApp
+ */
 
+/**
+ * Class frmBtsModApp
+ */
 class frmBtsModApp {
 
 	/**
@@ -11,12 +17,15 @@ class frmBtsModApp {
 	 */
 	public static $version = '2.1';
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		add_shortcode( 'frmmodal', 'frmBtsModApp::insert_modal_link' );
 		add_shortcode( 'frmmodal-content', 'frmBtsModApp::insert_modal_content_link' );
 		add_action( 'admin_init', 'frmBtsModApp::load_autoupdater' );
 
-		add_action( 'init', 'frmBtsModBlockController::init_block' );
+		add_action( 'init', 'frmBtsModBlockController::init_blocks' );
 	}
 
 	/**
@@ -41,6 +50,13 @@ class frmBtsModApp {
 		return plugins_url( '', self::plugin_path() . '/formidable-modal.php' );
 	}
 
+	/**
+	 * Modal shortcode handler.
+	 *
+	 * @param array  $atts    Shortcode attributes.
+	 * @param string $content Shortcode content.
+	 * @return string
+	 */
 	public static function insert_modal_link( $atts, $content = '' ) {
 		self::prepare_atts( $atts );
 		if ( empty( $atts['label'] ) && empty( $atts['button_html'] ) ) {
@@ -65,24 +81,55 @@ class frmBtsModApp {
 		return apply_filters( 'frm_modal_link', $link, $atts );
 	}
 
+	/**
+	 * Gets the modal button attributes.
+	 *
+	 * @since x.x
+	 *
+	 * @param array $atts Shortcode attributes.
+	 * @return string
+	 */
 	private static function get_modal_button_attrs( $atts ) {
 		$target  = '#frm-modal-' . $atts['modal_index'];
 		return 'data-toggle="modal" data-bs-toggle="modal" data-target="' . esc_attr( $target ) . '" data-bs-target="' . esc_attr( $target ) . '"';
 	}
 
+	/**
+	 * Maybe add modal attributes to the modal button.
+	 *
+	 * @since x.x
+	 *
+	 * @param string $button_html Modal button HTML.
+	 * @param array  $atts        Shortcode attributes.
+	 * @return string
+	 */
 	private static function maybe_add_modal_attrs_to_button( $button_html, $atts ) {
+		if ( strpos( $button_html, 'data-toggle' ) ) {
+			return $button_html;
+		}
+
 		return str_replace( '<a', '<a ' . self::get_modal_button_attrs( $atts ), $button_html );
 	}
 
 	/**
+	 * Modal content link handler.
+	 *
 	 * @since 2.0
+	 *
+	 * @param array  $atts    Shortcode attributes.
+	 * @param string $content Shortcode content.
+	 * @return string Shortcode output.
 	 */
 	public static function insert_modal_content_link( $atts, $content = '' ) {
 		return self::insert_modal_link( $atts, $content );
 	}
 
 	/**
+	 * Prepares the shortcode attributes.
+	 *
 	 * @since 2.0
+	 *
+	 * @param array $atts Shortcode attributes.
 	 */
 	private static function prepare_atts( &$atts ) {
 		$defaults = array(
@@ -101,7 +148,12 @@ class frmBtsModApp {
 	}
 
 	/**
+	 * Saves the modal settings to use in footer.
+	 *
 	 * @since 2.0
+	 *
+	 * @param array  $atts    Shortcode attributes.
+	 * @param string $content Shortcode content.
 	 */
 	private static function save_settings_for_footer( $atts, $content ) {
 		global $frm_vars;
@@ -142,16 +194,22 @@ class frmBtsModApp {
 			$content
 		);
 
-		error_log( $content );
-
 		return $content;
 	}
 
+	/**
+	 * Builds the attributes of modal content wrapper element.
+	 *
+	 * @since x.x
+	 *
+	 * @param array $atts Shortcode attributes.
+	 * @return string
+	 */
 	private static function get_modal_wrapper_attrs( $atts ) {
 		$attrs = array(
-			'id' => 'frm-modal-' . intval( $atts['modal_index'] ),
-			'tabindex' => -1,
-			'role'     => 'dialog',
+			'id'              => 'frm-modal-' . intval( $atts['modal_index'] ),
+			'tabindex'        => -1,
+			'role'            => 'dialog',
 			'aria-labelledby' => 'frmModalLabel-' . intval( $atts['modal_index'] ),
 			'aria-hidden'     => 'true',
 		);
@@ -160,7 +218,12 @@ class frmBtsModApp {
 	}
 
 	/**
+	 * Builds the shortcode string.
+	 *
 	 * @since 2.0
+	 *
+	 * @param array $atts Attributes.
+	 * @return string Shortcode string.
 	 */
 	private static function build_shortcode( $atts ) {
 		if ( $atts['type'] == 'view' ) {
@@ -172,30 +235,42 @@ class frmBtsModApp {
 		$shortcode_atts = '';
 		foreach ( $atts as $att => $val ) {
 			if ( $att != 'type' ) {
-				$shortcode_atts .= ' '. sanitize_text_field( $att . '="' . $val . '"' );
+				$shortcode_atts .= ' ' . sanitize_text_field( $att . '="' . $val . '"' );
 			}
 		}
 
-		return '['. $atts['type'] . $shortcode_atts . ']';
+		return '[' . $atts['type'] . $shortcode_atts . ']';
 	}
 
+	/**
+	 * Loads updater.
+	 */
 	public static function load_autoupdater() {
 		if ( class_exists( 'FrmAddon' ) ) {
 			frmBtsModUpdate::load_hooks();
 		}
 	}
 
+	/**
+	 * Enqueues scripts.
+	 */
 	public static function enqueue_scripts() {
-		$plugin_url = plugins_url() .'/'. basename( dirname( dirname( __FILE__ ) ) );
-		wp_enqueue_script( 'frm-bootstrap-modal', $plugin_url .'/js/bootstrap-modal.min.js', array(), self::$version, true );
-		wp_enqueue_style( 'frm-bootstrap-modal', $plugin_url .'/css/bootstrap-modal.css', array(), self::$version );
+		$plugin_url = plugins_url() . '/' . basename( dirname( dirname( __FILE__ ) ) );
+		wp_enqueue_script( 'frm-bootstrap-modal', $plugin_url . '/js/bootstrap-modal.min.js', array(), self::$version, true );
+		wp_enqueue_style( 'frm-bootstrap-modal', $plugin_url . '/css/bootstrap-modal.css', array(), self::$version );
 	}
 
+	/**
+	 * Shows the modal.
+	 */
 	public static function output_modal() {
 		global $frm_vars;
-		$allowed_sizes = array( 'small' => 'modal-sm', 'large' => 'modal-lg' );
+		$allowed_sizes = array(
+			'small' => 'modal-sm',
+			'large' => 'modal-lg',
+		);
 
-		if ( isset( $frm_vars['modals'] ) && is_array ( $frm_vars['modals'] ) ) {
+		if ( isset( $frm_vars['modals'] ) && is_array( $frm_vars['modals'] ) ) {
 			foreach ( $frm_vars['modals'] as $i => $form_atts ) {
 				if ( ! empty( $form_atts['skip_modal_wrapper'] ) ) {
 					$modal = do_shortcode( $form_atts['mod_content'] );
@@ -210,7 +285,7 @@ class frmBtsModApp {
 					$modal .= '<div class="modal-content">';
 					$modal .= '<div class="modal-header">';
 					$modal .= '<a class="close frm_icon_font frm_cancel1_icon alignright" data-dismiss="modal" ></a>';
-					$modal .= '<h4 class="modal-title" id="frmModalLabel-' . esc_attr( $i ) . '">'. $title .'</h4>';
+					$modal .= '<h4 class="modal-title" id="frmModalLabel-' . esc_attr( $i ) . '">' . $title . '</h4>';
 					$modal .= '</div>';
 					$modal .= '<div class="modal-body">';
 					$modal .= do_shortcode( $form_atts['mod_content'] );
@@ -219,7 +294,7 @@ class frmBtsModApp {
 					$modal .= '</div>';
 					$modal .= '</div>';
 				}
-				echo $modal;
+				echo $modal; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 	}

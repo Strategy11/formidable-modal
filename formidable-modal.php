@@ -1,14 +1,19 @@
 <?php
-/*
-Plugin Name: Formidable Bootstrap Modal
-Description: Easily insert a link to open a form in a model
-Version: 2.1-beta
-Plugin URI: http://formidablepro.com/
-Author URI: http://strategy11.com
-Author: Strategy11
-Text Domain: frmmodal
-*/
+/**
+ * Plugin Name: Formidable Bootstrap Modal
+ * Description: Easily insert a link to open a form in a model
+ * Version: 2.1-beta
+ * Plugin URI: http://formidablepro.com/
+ * Author URI: http://strategy11.com
+ * Author: Strategy11
+ * Text Domain: frmmodal
+ */
 
+/**
+ * Loads all the classes for this plugin.
+ *
+ * @param string $class_name The name of the class to load.
+ */
 function frm_btsmod_autoloader( $class_name ) {
 
 	// Only load Frm classes here
@@ -16,14 +21,14 @@ function frm_btsmod_autoloader( $class_name ) {
 		return;
 	}
 
-	$path = dirname( __FILE__ ) . '/classes/' . $class_name .'.php';
+	$path = dirname( __FILE__ ) . '/classes/' . $class_name . '.php';
 	if ( file_exists( $path ) ) {
 		include( $path );
 	}
 }
 
-// Add the autoloader
-spl_autoload_register('frm_btsmod_autoloader');
+// Add the autoloader.
+spl_autoload_register( 'frm_btsmod_autoloader' );
 
-// Load hooks
+// Load hooks.
 new frmBtsModApp();

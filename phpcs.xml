@@ -6,6 +6,8 @@
 	<exclude-pattern>vendor/*</exclude-pattern>
 	<exclude-pattern>node_modules/*</exclude-pattern>
 	<exclude-pattern>classes/lib/*</exclude-pattern>
+	<exclude-pattern>blocks/*</exclude-pattern>
+	<exclude-pattern>blocks-src/*</exclude-pattern>
 
 	<arg name="extensions" value="php" />
 	<arg value="nsp" />
@@ -21,5 +23,6 @@
 
 		<exclude name="Squiz.Commenting.FileComment.Missing" />
 		<exclude name="Squiz.Commenting.ClassComment.Missing" />
+    <exclude name="PEAR.NamingConventions.ValidClassName.StartWithCapital" />
 	</rule>
 </ruleset>

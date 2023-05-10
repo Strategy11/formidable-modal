@@ -5,9 +5,15 @@
  * @since x.x
  */
 
+/**
+ * Class frmBtsModBlockController
+ */
 class frmBtsModBlockController {
 
-	public static function init_block() {
+	/**
+	 * Init blocks.
+	 */
+	public static function init_blocks() {
 		register_block_type(
 			frmBtsModApp::plugin_path() . '/blocks/frm-modal',
 			array(
@@ -18,6 +24,13 @@ class frmBtsModBlockController {
 		register_block_type( frmBtsModApp::plugin_path() . '/blocks/frm-modal-content' );
 	}
 
+	/**
+	 * Render callback for modal block.
+	 *
+	 * @param array  $attrs   Block attributes.
+	 * @param string $content Block content.
+	 * @return string
+	 */
 	public static function render_modal_block( $attrs, $content ) {
 		$exploded_content = self::extract_block_content( $content );
 		if ( ! $exploded_content ) {
