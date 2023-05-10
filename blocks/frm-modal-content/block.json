@@ -39,14 +39,7 @@
     "html": false,
     "inserter": false,
     "lock": false,
-    "color": {
-      "gradients": true,
-      "link": true,
-      "__experimentalDefaultControls": {
-        "background": true,
-        "text": true
-      }
-    },
+    "color": false,
     "spacing": {
       "padding": false,
       "blockGap": false,

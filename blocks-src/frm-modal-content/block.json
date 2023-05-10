@@ -32,14 +32,7 @@
 		"html": false,
     "inserter": false,
     "lock": false,
-		"color": {
-			"gradients": true,
-			"link": true,
-			"__experimentalDefaultControls": {
-				"background": false,
-				"text": true
-			}
-		},
+		"color": false,
 		"spacing": {
 			"padding": false,
 			"blockGap": false,
