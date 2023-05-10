@@ -1,7 +1,7 @@
 import classnames from "classnames";
 
 export const CloseButton = () => (
-	<a className="close frm_icon_font frm_cancel1_icon alignright" data-dismiss="modal"></a>
+	<a className="close frm_icon_font frm_cancel1_icon alignright" data-dismiss="modal" data-bs-dismiss="modal"></a>
 );
 
 export const ModalHeader = ( { title } ) => (
