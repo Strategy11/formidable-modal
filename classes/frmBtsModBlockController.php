@@ -3,6 +3,7 @@
  * Modal block controller
  *
  * @since x.x
+ * @package FrmBtsModal
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
