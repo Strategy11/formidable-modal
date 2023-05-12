@@ -31,4 +31,5 @@ node_modules/
 
 package-lock.json
 .editorconfig
-*.DS_Store
+*.DS_Stor
+.phpunit.result.cache

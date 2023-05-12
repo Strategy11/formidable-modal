@@ -104,7 +104,7 @@ class frmBtsModApp {
 	 * @return string
 	 */
 	private static function maybe_add_modal_attrs_to_button( $button_html, $atts ) {
-		if ( strpos( $button_html, 'data-toggle' ) ) {
+		if ( strpos( $button_html, 'data-bs-toggle' ) ) {
 			return $button_html;
 		}
 

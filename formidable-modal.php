@@ -11,6 +11,10 @@
  * @package FrmBtsModal
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	die( 'You are not allowed to call this page directly.' );
+}
+
 /**
  * Loads all the classes for this plugin.
  *
