@@ -1,7 +1,6 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n';
 import { group as icon } from '@wordpress/icons';
 import { registerBlockType } from '@wordpress/blocks';
 
@@ -13,8 +12,6 @@ import metadata from './block.json';
 import save from './save';
 import './editor.scss';
 
-const { name } = metadata;
-
 const settings = {
 	icon,
 	edit,
@@ -23,9 +20,6 @@ const settings = {
 
 
 registerBlockType(
-	{
-		name,
-		...metadata
-	},
+	metadata,
 	settings
 );
