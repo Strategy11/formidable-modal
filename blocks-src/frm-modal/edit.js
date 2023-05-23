@@ -1,20 +1,6 @@
-import { useBlockProps, useInnerBlocksProps, InspectorControls, RichText, InnerBlocks } from '@wordpress/block-editor';
-import { __ } from '@wordpress/i18n';
-import {
-	TextControl,
-	RadioControl,
-	Panel,
-	PanelBody,
-	PanelRow,
-	Button,
-	ButtonGroup,
-	BlockStyles,
-	DefaultStylePicker,
-	AlignmentControl,
-	BlockControls
-} from '@wordpress/components';
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
-const MY_TEMPLATE = [
+const MODAL_TEMPLATE = [
 	[
 		'core/buttons',
 		{
@@ -41,21 +27,12 @@ const MY_TEMPLATE = [
 	],
 ];
 
-const MODAL_TEMPLATE = [
-	[ 'core/button', {
-		lock: {
-			move: false,
-			remove: false
-		}
-	} ],
-];
-
-export default function Edit( { attributes, setAttributes } ) {
+export default function Edit() {
 	return (
 		<>
 			<div { ...useBlockProps() }>
 				<InnerBlocks
-					template={ MY_TEMPLATE }
+					template={ MODAL_TEMPLATE }
 					templateLock="all"
 				/>
 			</div>
