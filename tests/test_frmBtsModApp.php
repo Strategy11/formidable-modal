@@ -12,6 +12,14 @@ class test_frmBtsModApp extends FrmUnitTest {
 		$this->assertTrue( 0 < strpos( $result, 'data-bs-toggle="modal"' ) );
 		$this->assertTrue( 0 < strpos( $result, 'data-target="#' ) );
 
+		// Run through the add modal attrs method again.
+		$result = $this->run_private_method(
+			array( 'frmBtsModApp', 'maybe_add_modal_attrs_to_button' ),
+			array( $button, $atts )
+		);
+		$this->assertEquals( $button, $result );
+
+		// Another button with modal attrs.
 		$button = '<a href="#" data-toggle="modal" data-bs-toggle="modal" data-target="#target" data-bs-target="#target">Button</a>';
 		$result = $this->run_private_method(
 			array( 'frmBtsModApp', 'maybe_add_modal_attrs_to_button' ),
