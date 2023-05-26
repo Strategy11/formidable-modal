@@ -23,6 +23,5 @@ export default function save( { attributes } ) {
 				</div>
 			</div>
 		</>
-	)
-	return <div { ...useInnerBlocksProps.save( useBlockProps.save() ) } />;
+	);
 }
