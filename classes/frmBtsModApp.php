@@ -182,17 +182,17 @@ class frmBtsModApp {
 	 * @return string
 	 */
 	private static function add_modal_content_wrapper_attrs( $content, $atts ) {
-		$content = str_replace(
+		$searches = array(
 			'<div class="wp-block-frm-modal-content',
-			'<div ' . self::get_modal_wrapper_attrs( $atts ) . ' class="modal fade wp-block-frm-modal-content',
-			$content
+			'class="modal-title"',
 		);
 
-		$content = str_replace(
-			'class="modal-title"',
-			'class="modal-title" id="frmModalLabel-' . intval( $atts['modal_index'] ) . '"',
-			$content
+		$replaces = array(
+			'<div ' . self::get_modal_wrapper_attrs( $atts ) . ' class="modal fade wp-block-frm-modal-content',
+			'class="modal-title" id="frmModalLabel-' . intval( $atts['modal_index'] ) . '"'
 		);
+
+		$content = str_replace( $searches, $replaces, $content );
 
 		return $content;
 	}
