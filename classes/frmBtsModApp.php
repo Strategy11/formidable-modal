@@ -189,7 +189,7 @@ class frmBtsModApp {
 
 		$replaces = array(
 			'<div ' . self::get_modal_wrapper_attrs( $atts ) . ' class="modal fade wp-block-frm-modal-content',
-			'class="modal-title" id="frmModalLabel-' . intval( $atts['modal_index'] ) . '"'
+			'class="modal-title" id="frmModalLabel-' . intval( $atts['modal_index'] ) . '"',
 		);
 
 		$content = str_replace( $searches, $replaces, $content );
