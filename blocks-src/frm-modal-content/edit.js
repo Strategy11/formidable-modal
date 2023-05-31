@@ -1,7 +1,6 @@
 import { useSelect } from '@wordpress/data';
 import {
 	RichText,
-	InnerBlocks,
 	useBlockProps,
 	InspectorControls,
 	useInnerBlocksProps,
@@ -35,15 +34,11 @@ function GroupEdit( {
 		className: layoutClassNames,
 	} );
 
-	// Default to the regular appender being rendered.
-	const renderAppender = hasInnerBlocks ? undefined : InnerBlocks.ButtonBlockAppender;
-
 	const innerBlocksProps = useInnerBlocksProps(
 		{
 			className: 'wp-block-group__inner-container'
 		},
 		{
-			renderAppender,
 			__unstableDisableLayoutClassNames: true,
 			templateLock: false,
 		}
