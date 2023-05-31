@@ -1,8 +1,18 @@
 [data-type="frm-modal/content"] {
-	.modal-content {
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+
+	.modal-dialog {
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 12px 32px rgba(0, 0, 0, 0.3);
+		margin-left: auto;
+		margin-right: auto;
 		background-color: #fff;
 		border-radius: 0.5rem;
 		border: 1px solid #dee2e6;
+
+		&.modal-sm {
+			max-width: 300px;
+		}
 	}
 
 	.modal-header {
