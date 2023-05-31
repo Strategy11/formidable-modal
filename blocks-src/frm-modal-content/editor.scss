@@ -1,6 +1,22 @@
 [data-type="frm-modal/content"] {
 	padding: 20px;
-	background-color: rgba(0, 0, 0, 0.5);
+
+	&:before {
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 20;
+	}
+
+	&:before,
+	.frm_modal_overlay {
+		content: '';
+		display: block;
+		position: absolute;
+		z-index: 10;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
 
 	.modal-dialog {
 		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 12px 32px rgba(0, 0, 0, 0.3);
@@ -9,6 +25,8 @@
 		background-color: #fff;
 		border-radius: 0.5rem;
 		border: 1px solid #dee2e6;
+		position: relative;
+		z-index: 30;
 
 		&.modal-sm {
 			max-width: 300px;

@@ -28,6 +28,9 @@
       "selector": ".modal-dialog",
       "attribute": "data-size"
     },
+    "overlayColor": {
+      "type": "string"
+    },
     "allowedBlocks": {
       "type": "array"
     }

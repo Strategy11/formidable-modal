@@ -7,6 +7,12 @@ import { ModalHeader, getModalDialogClassNames } from './helpers';
 
 export default function save( { attributes } ) {
 	const blockProps = useBlockProps.save();
+
+	blockProps.style = {
+		...blockProps.style,
+		backgroundColor: attributes.overlayColor
+	};
+
 	const innerBlocksProps = useInnerBlocksProps.save();
 
 	return (

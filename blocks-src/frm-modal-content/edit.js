@@ -6,7 +6,7 @@ import {
 	useInnerBlocksProps,
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
-import { SelectControl, PanelBody } from '@wordpress/components';
+import { SelectControl, PanelBody, ColorPicker } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 import { CloseButton, getModalDialogClassNames } from './helpers';
@@ -44,6 +44,12 @@ function GroupEdit( {
 		}
 	);
 
+	const onClickResetOverlayColor = event => {
+		event.preventDefault();
+
+		setAttributes( { overlayColor: '' } );
+	};
+
 	return (
 		<>
 			<InspectorControls group="settings">
@@ -59,9 +65,26 @@ function GroupEdit( {
 						onChange={ size => setAttributes( { size } ) }
 					/>
 				</PanelBody>
+
+				<PanelBody opened={ true }>
+					<h3>{ __( 'Overlay color', 'frmmodal' ) }</h3>
+
+					<p>
+						<a href="#" onClick={ onClickResetOverlayColor }>{ __( 'Reset color', 'frmmodal' ) }</a>
+					</p>
+
+					<ColorPicker
+						enableAlpha
+						color={ attributes.overlayColor }
+						onChange={ overlayColor => setAttributes( { overlayColor } ) }
+						copyFormat="rgb"
+					/>
+				</PanelBody>
 			</InspectorControls>
 
 			<div { ...blockProps }>
+				<div className="frm_modal_overlay" style={ { backgroundColor: attributes.overlayColor } }></div>
+
 				<div className={ getModalDialogClassNames( attributes ) } data-size={ attributes.size }>
 					<div className="modal-content">
 						<div className="modal-header">
