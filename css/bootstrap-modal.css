@@ -471,3 +471,8 @@
 .wp-block-frm-modal-content .modal-title {
 	margin-top: 0;
 }
+
+.modal-header:after,
+.modal-header:before {
+	display: none !important;
+}
