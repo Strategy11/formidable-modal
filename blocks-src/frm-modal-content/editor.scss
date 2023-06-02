@@ -1,6 +1,7 @@
 [data-type="frm-modal/content"] {
 	padding: 30px 20px;
 
+
 	&:before {
 		background-color: rgba(0, 0, 0, 0.5);
 		z-index: 20;
@@ -16,6 +17,10 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
+	}
+
+	&.has-warning:before {
+		z-index: 0;
 	}
 
 	.modal-dialog {
@@ -56,5 +61,13 @@
 		> .wp-block-group__inner-container > .block-list-appender:not(:first-child) {
 			bottom: calc(-1 * var(--global--spacing-vertical));
 		}
+	}
+
+	.close {
+		text-decoration: none !important;
+		color: currentColor !important;
+		cursor: pointer;
+		font-size: 2em;
+		font-weight: 300;
 	}
 }
