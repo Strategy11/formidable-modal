@@ -289,7 +289,7 @@ class frmBtsModApp {
 				$modal .= '<div class="modal-content">';
 				$modal .= '<div class="modal-header">';
 				$modal .= '<h4 class="modal-title" id="frmModalLabel-' . esc_attr( $i ) . '">' . $title . '</h4>';
-				$modal .= '<a class="close frm_icon_font frm_cancel1_icon alignright" data-dismiss="modal" data-bs-dismiss="modal"></a>';
+				$modal .= '<a class="close alignright" data-dismiss="modal" data-bs-dismiss="modal">&times;</a>';
 				$modal .= '</div>';
 				$modal .= '<div class="modal-body">';
 				$modal .= do_shortcode( $form_atts['mod_content'] );

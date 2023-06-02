@@ -472,7 +472,14 @@
 	margin-top: 0;
 }
 
-.modal-header:after,
-.modal-header:before {
+.wp-block-frm-modal-content .modal-header:after,
+.wp-block-frm-modal-content .modal-header:before {
 	display: none !important;
+}
+
+.wp-block-frm-modal-content .close {
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 2em;
+	font-weight: 300;
 }
