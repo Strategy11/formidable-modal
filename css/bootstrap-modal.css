@@ -462,3 +462,12 @@
 		overflow-y: auto;
 	}
 }
+
+/***** Custom CSS *****/
+.wp-block-frm-modal-content .modal-dialog {
+	margin-top: 30px;
+}
+
+.wp-block-frm-modal-content .modal-title {
+	margin-top: 0;
+}

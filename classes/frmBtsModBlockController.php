@@ -2,7 +2,7 @@
 /**
  * Modal block controller
  *
- * @since x.x
+ * @since 3.0
  * @package FrmBtsModal
  */
 

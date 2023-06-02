@@ -15,7 +15,7 @@ class frmBtsModApp {
 	 *
 	 * @var string
 	 */
-	public static $version = '2.1';
+	public static $version = '3.0';
 
 	/**
 	 * Constructor.
@@ -31,7 +31,7 @@ class frmBtsModApp {
 	/**
 	 * Gets plugin path.
 	 *
-	 * @since x.x
+	 * @since 3.0
 	 *
 	 * @return string
 	 */
@@ -42,7 +42,7 @@ class frmBtsModApp {
 	/**
 	 * Gets plugin URL.
 	 *
-	 * @since x.x
+	 * @since 3.0
 	 *
 	 * @return string
 	 */
@@ -84,7 +84,7 @@ class frmBtsModApp {
 	/**
 	 * Gets the modal button attributes.
 	 *
-	 * @since x.x
+	 * @since 3.0
 	 *
 	 * @param array $atts Shortcode attributes.
 	 * @return string
@@ -97,7 +97,7 @@ class frmBtsModApp {
 	/**
 	 * Maybe add modal attributes to the modal button.
 	 *
-	 * @since x.x
+	 * @since 3.0
 	 *
 	 * @param string $button_html Modal button HTML.
 	 * @param array  $atts        Shortcode attributes.
@@ -283,7 +283,7 @@ class frmBtsModApp {
 				$title = empty( $form_atts['modal_title'] ) ? $form_atts['label'] : $form_atts['modal_title'];
 
 				$modal = '<div id="frm-modal-' . esc_attr( $i ) . '"';
-				$modal .= ' class="modal fade ' . esc_attr( $form_atts['modal_class'] ) . '" tabindex="-1" role="dialog"';
+				$modal .= ' class="modal fade wp-block-frm-modal-content ' . esc_attr( $form_atts['modal_class'] ) . '" tabindex="-1" role="dialog"';
 				$modal .= ' aria-labelledby="frmModalLabel-' . esc_attr( $i ) . '" aria-hidden="true">';
 				$modal .= '<div class="modal-dialog ' . esc_attr( $size ) . '">';
 				$modal .= '<div class="modal-content">';
