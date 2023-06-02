@@ -214,7 +214,7 @@ class frmBtsModApp {
 			'aria-hidden'     => 'true',
 		);
 
-		return FrmAppHelper::array_to_html_params( $attrs );
+		return self::array_to_html_params( $attrs );
 	}
 
 	/**
@@ -300,5 +300,26 @@ class frmBtsModApp {
 			}
 			echo $modal; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
+	}
+
+	/**
+	 * Converts array of attributes to HTML attributes string.
+	 *
+	 * @since 3.0
+	 *
+	 * @param array $attrs Attributes array.
+	 * @return string
+	 */
+	public static function array_to_html_params( $attrs ) {
+		if ( method_exists( 'FrmAppHelper', 'array_to_html_params' ) ) {
+			return FrmAppHelper::array_to_html_params( $attrs );
+		}
+
+		$html_attrs = '';
+		foreach ( $attrs as $key => $value ) {
+			$html_attrs .= ' ' . esc_attr( $key ) . '="' . esc_attr( $value ) . '"';
+		}
+
+		return $html_attrs;
 	}
 }
