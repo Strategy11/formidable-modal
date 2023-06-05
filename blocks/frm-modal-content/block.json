@@ -29,6 +29,10 @@
       "attribute": "data-size"
     },
     "overlayColor": {
+      "type": "string",
+      "default": "rgba(0, 0, 0, 0.2)"
+    },
+    "bgColor": {
       "type": "string"
     },
     "allowedBlocks": {

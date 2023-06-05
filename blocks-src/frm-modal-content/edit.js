@@ -6,8 +6,19 @@ import {
 	useInnerBlocksProps,
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
-import { SelectControl, PanelBody, ColorPicker } from '@wordpress/components';
+import {
+	SelectControl,
+	PanelBody,
+	ColorPicker,
+	Button,
+	ColorIndicator,
+	Dropdown,
+	__experimentalVStack as VStack,
+	__experimentalHStack as HStack,
+	__experimentalText as Text
+} from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import { useState } from '@wordpress/element';
 
 import { CloseButton, getModalDialogClassNames } from './helpers';
 
@@ -67,25 +78,60 @@ function GroupEdit( {
 				</PanelBody>
 
 				<PanelBody opened={ true }>
-					<h3>{ __( 'Overlay color', 'frmmodal' ) }</h3>
+					<h3>{ __( 'Modal appearance', 'frmmodal' ) }</h3>
 
-					<p>
-						<a href="#" onClick={ onClickResetOverlayColor }>{ __( 'Reset color', 'frmmodal' ) }</a>
-					</p>
+					<VStack>
+						<Dropdown
+							className="block-editor-tools-panel-color-gradient-settings__dropdown"
+							popoverProps={ { placement: 'left-start' } }
+							renderToggle={ ( { isOpen, onToggle } ) => (
+								<Button onClick={ onToggle } className="block-editor-panel-color-gradient-settings__dropdown" aria-expanded={ isOpen }>
+									<HStack justify="flex-start">
+										<ColorIndicator colorValue={ attributes.overlayColor }></ColorIndicator>
+										<Text>{ __( 'Overlay color', 'frmmodal' ) }</Text>
+									</HStack>
+								</Button>
+							) }
+							renderContent={ () => (
+								<ColorPicker
+									enableAlpha
+									color={ attributes.overlayColor }
+									onChange={ overlayColor => setAttributes( { overlayColor } ) }
+								/>
+							) }
+						/>
 
-					<ColorPicker
-						enableAlpha
-						color={ attributes.overlayColor }
-						onChange={ overlayColor => setAttributes( { overlayColor } ) }
-						copyFormat="rgb"
-					/>
+						<Dropdown
+							className="block-editor-tools-panel-color-gradient-settings__dropdown"
+							popoverProps={ { placement: 'left-start' } }
+							renderToggle={ ( { isOpen, onToggle } ) => (
+								<Button onClick={ onToggle } className="block-editor-panel-color-gradient-settings__dropdown" aria-expanded={ isOpen }>
+									<HStack justify="flex-start">
+										<ColorIndicator colorValue={ attributes.bgColor }></ColorIndicator>
+										<Text>{ __( 'Background color', 'frmmodal' ) }</Text>
+									</HStack>
+								</Button>
+							) }
+							renderContent={ () => (
+								<ColorPicker
+									enableAlpha
+									color={ attributes.bgColor }
+									onChange={ bgColor => setAttributes( { bgColor } ) }
+								/>
+							) }
+						/>
+					</VStack>
 				</PanelBody>
 			</InspectorControls>
 
 			<div { ...blockProps }>
 				<div className="frm_modal_overlay" style={ { backgroundColor: attributes.overlayColor } }></div>
 
-				<div className={ getModalDialogClassNames( attributes ) } data-size={ attributes.size }>
+				<div
+					className={ getModalDialogClassNames( attributes ) }
+					data-size={ attributes.size }
+					style={ { backgroundColor: attributes.bgColor } }
+				>
 					<div className="modal-content">
 						<div className="modal-header">
 							<RichText

@@ -19,7 +19,7 @@ export default function save( { attributes } ) {
 		<>
 			<div { ...blockProps }>
 				<div className={ getModalDialogClassNames( attributes ) } data-size={ attributes.size }>
-					<div className="modal-content">
+					<div className="modal-content" style={ { backgroundColor: attributes.bgColor } }>
 						<ModalHeader title={ attributes.title } />
 
 						<div className="modal-body">
