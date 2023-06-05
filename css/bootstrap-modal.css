@@ -464,6 +464,10 @@
 }
 
 /***** Custom CSS *****/
+.wp-block-frm-modal-content {
+	--bs-modal-padding: 40px;
+}
+
 .wp-block-frm-modal-content .modal-dialog {
 	margin-top: 30px;
 }
@@ -482,4 +486,17 @@
 	cursor: pointer;
 	font-size: 2em;
 	font-weight: 300;
+	line-height: 0.6;
+}
+
+.wp-block-frm-modal-content .frm_modal_header_no_title {
+	position: relative;
+	padding: 0;
+	border-bottom: 0;
+}
+
+.wp-block-frm-modal-content .frm_modal_header_no_title .close {
+	position: absolute;
+	right: 26px;
+	top: 26px;
 }
