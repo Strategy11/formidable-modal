@@ -119,6 +119,7 @@ const GroupEdit = ( {
 							<RichText
 								tagName="div"
 								className="modal-title"
+								allowedFormats={ [ 'core/bold', 'core/italic' ] }
 								value={ attributes.title }
 								onChange={ title => setAttributes( { title } ) }
 								placeholder={ __( 'Modal title', 'frmmodal' ) }
