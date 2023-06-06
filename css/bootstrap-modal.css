@@ -465,7 +465,8 @@
 
 /***** Custom CSS *****/
 .wp-block-frm-modal-content {
-	--bs-modal-padding: 40px;
+	--bs-modal-padding: 2rem;
+	--bs-modal-header-padding: 2rem;
 }
 
 .wp-block-frm-modal-content .modal-dialog {
