@@ -473,6 +473,16 @@
 	margin-top: 30px;
 }
 
+body.admin-bar .wp-block-frm-modal-content .modal-dialog {
+	margin-top: 62px;
+}
+
+@media screen and (max-width: 782px) {
+	body.admin-bar .wp-block-frm-modal-content .modal-dialog {
+		margin-top: 76px;
+	}
+}
+
 .wp-block-frm-modal-content .modal-title {
 	margin-top: 0;
 }
