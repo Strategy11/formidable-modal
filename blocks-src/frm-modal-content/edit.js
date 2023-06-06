@@ -1,10 +1,8 @@
-import { useSelect } from '@wordpress/data';
 import {
 	RichText,
 	useBlockProps,
 	InspectorControls,
 	useInnerBlocksProps,
-	store as blockEditorStore,
 } from '@wordpress/block-editor';
 import {
 	SelectControl,
