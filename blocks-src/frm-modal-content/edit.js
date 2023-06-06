@@ -18,29 +18,47 @@ import {
 	__experimentalText as Text
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import { useState } from '@wordpress/element';
 
 import { CloseButton, getModalDialogClassNames } from './helpers';
+import classnames from 'classnames';
 
-function GroupEdit( {
+const ColorPickerButton = ( { color, onChangeColor, label } ) => (
+	<Dropdown
+		className="frm_modal_color_setting block-editor-tools-panel-color-gradient-settings__dropdown"
+		popoverProps={ { placement: 'left-start' } }
+		renderToggle={ ( { isOpen, onToggle } ) => (
+			<Button
+				onClick={ onToggle }
+				className={
+					classnames(
+						'block-editor-panel-color-gradient-settings__dropdown',
+						{ 'is-open': isOpen }
+					)
+				}
+				aria-expanded={ isOpen }
+			>
+				<HStack justify="flex-start">
+					<ColorIndicator className="block-editor-panel-color-gradient-settings__color-indicator" colorValue={ color } />
+					<Text>{ label }</Text>
+				</HStack>
+			</Button>
+		) }
+		renderContent={ () => (
+			<ColorPicker
+				enableAlpha
+				color={ color }
+				onChange={ onChangeColor }
+			/>
+		) }
+	/>
+);
+
+const GroupEdit = ( {
 	attributes,
-	name,
 	setAttributes,
 	clientId,
 	__unstableLayoutClassNames: layoutClassNames,
-} ) {
-	const { hasInnerBlocks } = useSelect(
-		( select ) => {
-			const { getBlock } = select( blockEditorStore );
-			const block = getBlock( clientId );
-			return {
-				hasInnerBlocks: !! ( block && block.innerBlocks.length ),
-			};
-		},
-		[ clientId ]
-	);
-
-	// Hooks.
+} ) => {
 	const blockProps = useBlockProps( {
 		className: layoutClassNames,
 	} );
@@ -54,12 +72,6 @@ function GroupEdit( {
 			templateLock: false,
 		}
 	);
-
-	const onClickResetOverlayColor = event => {
-		event.preventDefault();
-
-		setAttributes( { overlayColor: '' } );
-	};
 
 	return (
 		<>
@@ -80,52 +92,24 @@ function GroupEdit( {
 				<PanelBody opened={ true }>
 					<h3>{ __( 'Modal appearance', 'frmmodal' ) }</h3>
 
-					<VStack>
-						<Dropdown
-							className="block-editor-tools-panel-color-gradient-settings__dropdown"
-							popoverProps={ { placement: 'left-start' } }
-							renderToggle={ ( { isOpen, onToggle } ) => (
-								<Button onClick={ onToggle } className="block-editor-panel-color-gradient-settings__dropdown" aria-expanded={ isOpen }>
-									<HStack justify="flex-start">
-										<ColorIndicator colorValue={ attributes.overlayColor }></ColorIndicator>
-										<Text>{ __( 'Overlay color', 'frmmodal' ) }</Text>
-									</HStack>
-								</Button>
-							) }
-							renderContent={ () => (
-								<ColorPicker
-									enableAlpha
-									color={ attributes.overlayColor }
-									onChange={ overlayColor => setAttributes( { overlayColor } ) }
-								/>
-							) }
+					<VStack spacing="0">
+						<ColorPickerButton
+							label={ __( 'Overlay color', 'frmmodal' ) }
+							color={ attributes.overlayColor }
+							onChangeColor={ overlayColor => setAttributes( { overlayColor } ) }
 						/>
 
-						<Dropdown
-							className="block-editor-tools-panel-color-gradient-settings__dropdown"
-							popoverProps={ { placement: 'left-start' } }
-							renderToggle={ ( { isOpen, onToggle } ) => (
-								<Button onClick={ onToggle } className="block-editor-panel-color-gradient-settings__dropdown" aria-expanded={ isOpen }>
-									<HStack justify="flex-start">
-										<ColorIndicator colorValue={ attributes.bgColor }></ColorIndicator>
-										<Text>{ __( 'Background color', 'frmmodal' ) }</Text>
-									</HStack>
-								</Button>
-							) }
-							renderContent={ () => (
-								<ColorPicker
-									enableAlpha
-									color={ attributes.bgColor }
-									onChange={ bgColor => setAttributes( { bgColor } ) }
-								/>
-							) }
+						<ColorPickerButton
+							label={ __( 'Background color', 'frmmodal' ) }
+							color={ attributes.bgColor }
+							onChangeColor={ bgColor => setAttributes( { bgColor } ) }
 						/>
 					</VStack>
 				</PanelBody>
 			</InspectorControls>
 
 			<div { ...blockProps }>
-				<div className="frm_modal_overlay" style={ { backgroundColor: attributes.overlayColor } }></div>
+				<div className="frm_modal_overlay" style={ { backgroundColor: attributes.overlayColor } } />
 
 				<div
 					className={ getModalDialogClassNames( attributes ) }

@@ -30,7 +30,6 @@
 		margin-right: auto;
 		background-color: #fff;
 		border-radius: 0.5rem;
-		border: 1px solid #dee2e6;
 		position: relative;
 		z-index: 30;
 
@@ -69,5 +68,17 @@
 		cursor: pointer;
 		font-size: 2em;
 		font-weight: 300;
+	}
+}
+
+.frm_modal_color_setting {
+	--setting-border: 1px solid rgba(0,0,0,.1);
+
+	border-bottom: var(--setting-border);
+	border-left: var(--setting-border);
+	border-right: var(--setting-border);
+
+	&:first-child {
+		border-top: var(--setting-border);
 	}
 }
