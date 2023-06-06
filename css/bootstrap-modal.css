@@ -487,6 +487,7 @@
 	font-size: 2em;
 	font-weight: 300;
 	line-height: 0.6;
+	margin: 0 !important;
 }
 
 .wp-block-frm-modal-content .frm_modal_header_no_title {
