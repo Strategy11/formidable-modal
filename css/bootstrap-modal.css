@@ -513,10 +513,14 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 	top: 26px;
 }
 
-.wp-block-frm-modal-content .modal-body {
-	padding-bottom: 1em;
-}
-
 .wp-block-frm-modal-content.show ~ .modal-backdrop.show {
 	opacity: 0 !important;
+}
+
+.wp-block-frm-modal-content .modal-body > div > *:last-child {
+	margin-bottom: 0;
+}
+
+.wp-block-frm-modal-content .modal-body > div > *:first-child {
+	margin-top: 0;
 }
