@@ -40,9 +40,9 @@
     }
   },
   "supports": {
-    "__experimentalOnEnter": true,
-    "__experimentalSettings": true,
-    "ariaLabel": true,
+    "__experimentalOnEnter": false,
+    "__experimentalSettings": false,
+    "ariaLabel": false,
     "html": false,
     "inserter": false,
     "lock": false,
@@ -82,9 +82,6 @@
       "__experimentalDefaultControls": {
         "fontSize": true
       }
-    },
-    "__experimentalLayout": {
-      "allowSizingOnChildren": true
     }
   },
   "editorStyle": "file:./index.css"
