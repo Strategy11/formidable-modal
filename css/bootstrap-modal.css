@@ -497,8 +497,8 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 	cursor: pointer;
 	font-size: 36px;
 	font-weight: 300;
-	line-height: 0.6;
-	margin: 0 !important;
+	line-height: 21px;
+	margin: 0 0 4px !important;
 }
 
 .wp-block-frm-modal-content .frm_modal_header_no_title {
