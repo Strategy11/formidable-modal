@@ -16,9 +16,14 @@
 		border-radius: 0.5rem;
 		position: relative;
 		z-index: 30;
+		max-width: 500px;
 
 		&.modal-sm {
 			max-width: 300px;
+		}
+
+		&.modal-lg {
+			max-width: 800px;
 		}
 	}
 
