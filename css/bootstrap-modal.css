@@ -483,8 +483,13 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 	}
 }
 
+.wp-block-frm-modal-content .modal-header {
+	padding-top: 1.75em;
+	padding-bottom: 1.75em;
+}
+
 .wp-block-frm-modal-content .modal-title {
-	margin-top: 0;
+	margin: 0 !important;
 }
 
 .wp-block-frm-modal-content .modal-header:after,
