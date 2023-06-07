@@ -43,7 +43,7 @@
 		flex-shrink: 0;
 		align-items: center;
 		justify-content: space-between;
-		padding: 2rem;
+		padding: 2em;
 		border-bottom: 1px solid #dee2e6;
 		border-top-left-radius: var(--bs-modal-inner-border-radius);
 		border-top-right-radius: var(--bs-modal-inner-border-radius);
@@ -55,7 +55,7 @@
 	}
 
 	.modal-body {
-		padding: 2rem;
+		padding: 2em 2em 1em;
 
 		> .wp-block-group__inner-container > .block-list-appender:not(:first-child) {
 			bottom: calc(-1 * var(--global--spacing-vertical));

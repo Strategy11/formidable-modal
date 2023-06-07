@@ -465,8 +465,8 @@
 
 /***** Custom CSS *****/
 .wp-block-frm-modal-content {
-	--bs-modal-padding: 2rem;
-	--bs-modal-header-padding: 2rem;
+	--bs-modal-padding: 2em;
+	--bs-modal-header-padding: 2em;
 }
 
 .wp-block-frm-modal-content .modal-dialog {
@@ -511,4 +511,8 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 	position: absolute;
 	right: 26px;
 	top: 26px;
+}
+
+.wp-block-frm-modal-content .modal-body {
+	padding-bottom: 1em;
 }
