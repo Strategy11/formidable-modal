@@ -30,7 +30,7 @@
     },
     "overlayColor": {
       "type": "string",
-      "default": "rgba(0, 0, 0, 0.2)"
+      "default": "rgba(0, 0, 0, 0.5)"
     },
     "bgColor": {
       "type": "string"

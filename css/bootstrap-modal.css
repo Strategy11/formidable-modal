@@ -516,3 +516,7 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 .wp-block-frm-modal-content .modal-body {
 	padding-bottom: 1em;
 }
+
+.wp-block-frm-modal-content.show ~ .modal-backdrop.show {
+	opacity: 0 !important;
+}

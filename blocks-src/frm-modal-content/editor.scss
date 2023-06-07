@@ -1,23 +1,7 @@
 [data-type="frm-modal/content"] {
 	padding: 30px 20px;
 	margin-top: 1em;
-
-	&:before {
-		background-color: rgba(0, 0, 0, 0.5);
-		z-index: 20;
-	}
-
-	&:before,
-	.frm_modal_overlay {
-		content: '';
-		display: block;
-		position: absolute;
-		z-index: 10;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-	}
+	background-color: rgba(0, 0, 0, 0.5);
 
 	&.has-warning:before {
 		z-index: 0;

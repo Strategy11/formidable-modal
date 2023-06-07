@@ -61,6 +61,11 @@ const GroupEdit = ( {
 		className: layoutClassNames,
 	} );
 
+	blockProps.style = {
+		...blockProps.style,
+		backgroundColor: attributes.overlayColor
+	};
+
 	const innerBlocksProps = useInnerBlocksProps(
 		{
 			className: 'wp-block-group__inner-container'
@@ -107,8 +112,6 @@ const GroupEdit = ( {
 			</InspectorControls>
 
 			<div { ...blockProps }>
-				<div className="frm_modal_overlay" style={ { backgroundColor: attributes.overlayColor } } />
-
 				<div
 					className={ getModalDialogClassNames( attributes ) }
 					data-size={ attributes.size }
