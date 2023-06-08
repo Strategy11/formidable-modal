@@ -484,8 +484,8 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 }
 
 .wp-block-frm-modal-content .modal-header {
-	padding-top: 1.75em;
-	padding-bottom: 1.75em;
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
 }
 
 .wp-block-frm-modal-content .modal-title {
@@ -500,7 +500,7 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 .wp-block-frm-modal-content .close {
 	text-decoration: none;
 	cursor: pointer;
-	font-size: 36px;
+	font-size: 30px;
 	font-weight: 300;
 	line-height: 21px;
 	margin: 0 0 4px !important;
