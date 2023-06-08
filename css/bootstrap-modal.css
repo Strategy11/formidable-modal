@@ -465,8 +465,8 @@
 
 /***** Custom CSS *****/
 .wp-block-frm-modal-content {
-	--bs-modal-padding: 2em;
-	--bs-modal-header-padding: 2em;
+	--bs-modal-padding: 2rem;
+	--bs-modal-header-padding: 2rem;
 }
 
 .wp-block-frm-modal-content .modal-dialog {
@@ -484,8 +484,8 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 }
 
 .wp-block-frm-modal-content .modal-header {
-	padding-top: 1.5em;
-	padding-bottom: 1.5em;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
 }
 
 .wp-block-frm-modal-content .modal-title {
@@ -516,6 +516,7 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 	position: absolute;
 	right: 26px;
 	top: 26px;
+	z-index: 1000;
 }
 
 .wp-block-frm-modal-content.show ~ .modal-backdrop.show {
