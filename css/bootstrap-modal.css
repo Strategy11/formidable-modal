@@ -504,6 +504,11 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 	font-weight: 300;
 	line-height: 21px;
 	margin: 0 0 4px !important;
+	color: currentColor;
+}
+
+.wp-block-frm-modal-content .close:focus {
+	text-decoration: underline;
 }
 
 .wp-block-frm-modal-content .frm_modal_header_no_title {
