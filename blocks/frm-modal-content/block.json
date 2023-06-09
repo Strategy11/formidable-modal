@@ -17,11 +17,6 @@
   "editorScript": "file:./index.js",
   "textdomain": "frmmodal",
   "attributes": {
-    "title": {
-      "type": "string",
-      "source": "html",
-      "selector": ".modal-title"
-    },
     "size": {
       "type": "string",
       "source": "attribute",

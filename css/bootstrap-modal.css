@@ -488,10 +488,6 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 	padding-bottom: 1.5rem;
 }
 
-.wp-block-frm-modal-content .modal-title {
-	margin: 0 !important;
-}
-
 .wp-block-frm-modal-content .modal-header:after,
 .wp-block-frm-modal-content .modal-header:before {
 	display: none !important;

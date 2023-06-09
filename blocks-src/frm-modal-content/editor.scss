@@ -38,11 +38,6 @@
 		border-top-right-radius: var(--bs-modal-inner-border-radius);
 	}
 
-	.modal-title {
-		margin-bottom: 0;
-		width: 100%;
-	}
-
 	.modal-body {
 		padding: 2rem;
 
@@ -63,6 +58,19 @@
 
 	.wp-block-group__inner-container > *:first-child {
 		margin-top: 0;
+	}
+
+	.frm_modal_header_no_title {
+		position: relative;
+		padding: 0;
+		border-bottom: 0;
+	}
+
+	.frm_modal_header_no_title .close {
+		position: absolute;
+		right: 26px;
+		top: 26px;
+		z-index: 1000;
 	}
 }
 
