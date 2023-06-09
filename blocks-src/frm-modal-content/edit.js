@@ -6,6 +6,7 @@ import {
 } from '@wordpress/block-editor';
 import {
 	SelectControl,
+	TextControl,
 	PanelBody,
 	ColorPicker,
 	Button,
@@ -17,7 +18,7 @@ import {
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-import { CloseButton, getModalDialogClassNames } from './helpers';
+import { ModalHeader, getModalDialogClassNames } from './helpers';
 import classnames from 'classnames';
 
 const ColorPickerButton = ( { color, onChangeColor, label } ) => (
@@ -80,6 +81,14 @@ const GroupEdit = ( {
 		<>
 			<InspectorControls group="settings">
 				<PanelBody opened={ true }>
+					<TextControl
+						label={ __( 'Modal title', 'frmmodal' ) }
+						value={ attributes.title }
+						onChange={ title => setAttributes( { title } ) }
+					/>
+				</PanelBody>
+
+				<PanelBody opened={ true }>
 					<SelectControl
 						label={ __( 'Modal dialog size', 'frmmodal' ) }
 						options={ [
@@ -118,18 +127,7 @@ const GroupEdit = ( {
 					style={ { backgroundColor: attributes.bgColor } }
 				>
 					<div className="modal-content">
-						<div className="modal-header">
-							<RichText
-								tagName="div"
-								className="modal-title"
-								allowedFormats={ [ 'core/bold', 'core/italic' ] }
-								value={ attributes.title }
-								onChange={ title => setAttributes( { title } ) }
-								placeholder={ __( 'Modal title', 'frmmodal' ) }
-							/>
-
-							<CloseButton />
-						</div>
+						<ModalHeader title={ attributes.title } />
 
 						<div className="modal-body">
 							<div { ...innerBlocksProps } />
