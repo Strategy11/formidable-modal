@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<ruleset name="Formidable">
+	<description>Formidable Forms rules for PHP_CodeSniffer</description>
+
+	<exclude-pattern>tests/*</exclude-pattern>
+	<exclude-pattern>vendor/*</exclude-pattern>
+	<exclude-pattern>node_modules/*</exclude-pattern>
+	<exclude-pattern>classes/lib/*</exclude-pattern>
+	<exclude-pattern>blocks/*</exclude-pattern>
+	<exclude-pattern>blocks-src/*</exclude-pattern>
+
+	<arg name="extensions" value="php" />
+	<arg value="nsp" />
+
+	<rule ref="WordPress">
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+		<exclude name="Generic.Files.LowercasedFilename.NotFound" />
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+		<exclude name="WordPress.PHP.YodaConditions.NotYoda" />
+
+		<!-- Only needed if we use DOMDocument->nodeValue -->
+		<exclude name="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase" />
+
+		<exclude name="Squiz.Commenting.FileComment.Missing" />
+		<exclude name="Squiz.Commenting.ClassComment.Missing" />
+    <exclude name="PEAR.NamingConventions.ValidClassName.StartWithCapital" />
+	</rule>
+</ruleset>

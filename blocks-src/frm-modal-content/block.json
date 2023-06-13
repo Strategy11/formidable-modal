@@ -1,0 +1,76 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "frm-modal/content",
+	"title": "Formidable Modal Content",
+	"category": "widgets",
+  "parent": [ "frm-modal/modal" ],
+	"description": "Gather blocks in a layout container.",
+	"keywords": [ "container", "wrapper", "row", "section" ],
+  "editorScript": "file:./index.js",
+  "textdomain": "frmmodal",
+	"attributes": {
+    "size": {
+      "type": "string",
+      "source": "attribute",
+      "selector": ".modal-dialog",
+      "attribute": "data-size"
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": "rgba(0, 0, 0, 0.5)"
+    },
+    "bgColor": {
+      "type": "string"
+    },
+		"allowedBlocks": {
+			"type": "array"
+		}
+	},
+	"supports": {
+		"__experimentalOnEnter": false,
+		"__experimentalSettings": false,
+		"ariaLabel": false,
+		"html": false,
+    "inserter": false,
+    "lock": false,
+		"color": false,
+		"spacing": {
+			"padding": false,
+			"blockGap": false,
+			"__experimentalDefaultControls": {
+				"padding": false,
+				"blockGap": false
+			}
+		},
+		"dimensions": {
+			"minHeight": false
+		},
+		"__experimentalBorder": {
+			"color": false,
+			"radius": false,
+			"style": false,
+			"width": false,
+			"__experimentalDefaultControls": {
+				"color": false,
+				"radius": false,
+				"style": false,
+				"width": false
+			}
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true
+			}
+		}
+	},
+	"editorStyle": "file:./index.css"
+}
