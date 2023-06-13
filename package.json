@@ -7,7 +7,14 @@
 	"main": "blocks-src/index.js",
 	"scripts": {
 		"build": "wp-scripts build --output-path=blocks --webpack-src-dir=blocks-src",
-		"build-bootstrap": "wp-scripts build --output-path=js-dist --webpack-src-dir=js-src"
+		"build-bootstrap": "wp-scripts build --output-path=js-dist --webpack-src-dir=js-src",
+		"lint": "eslint js/src js/formidablepro.js -c ../formidable/.eslintrc.json; exit 0",
+		"set-version": "../formidable/bin/set-version.sh formidable-modal formidable-modal classes/frmBtsModApp",
+		"package-plugin": "../formidable/bin/build-plugin.sh formidable-modal",
+		"zip": "../formidable/bin/zip-plugin.sh formidable-modal",
+		"minimize": "echo 'Nothing to minimize'",
+		"git-release": "../formidable/bin/git-release.sh formidable-modal formidable-modal",
+		"makepot": "wp i18n make-pot . languages/formidable-modal.pot --skip-audit"
 	},
 	"devDependencies": {
 		"@wordpress/icons": "^9.22.0",

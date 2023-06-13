@@ -11,7 +11,7 @@ class frmBtsModApp {
 	/**
 	 * Plugin version.
 	 *
-	 * @since 2.1
+	 * @since 3.0
 	 *
 	 * @var string
 	 */
@@ -175,7 +175,7 @@ class frmBtsModApp {
 	 * Adds Bootstrap modal attributes to the wrapper elements if "skip_modal_wrapper" is true. This is used in case the
 	 * full modal HTML is passed instead of just the content.
 	 *
-	 * @since x.x
+	 * @since 3.0
 	 *
 	 * @param string $content The modal content passed to the shortcode.
 	 * @param array  $atts    Shortcode attributes.
@@ -200,7 +200,7 @@ class frmBtsModApp {
 	/**
 	 * Builds the attributes of modal content wrapper element.
 	 *
-	 * @since x.x
+	 * @since 3.0
 	 *
 	 * @param array $atts Shortcode attributes.
 	 * @return string
