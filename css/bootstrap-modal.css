@@ -520,7 +520,7 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 	z-index: 1000;
 }
 
-.wp-block-frm-modal-content.show ~ .modal-backdrop.show {
+.wp-block-frm-modal-content:not(.frm-modal-sc).show ~ .modal-backdrop.show {
 	opacity: 0 !important;
 }
 
