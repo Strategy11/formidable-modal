@@ -471,6 +471,7 @@
 
 .wp-block-frm-modal-content .modal-dialog {
 	margin-top: 30px;
+	transform: none !important;
 }
 
 body.admin-bar .wp-block-frm-modal-content .modal-dialog {
@@ -530,4 +531,8 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 
 .wp-block-frm-modal-content .modal-body > div > *:first-child {
 	margin-top: 0;
+}
+
+.wp-block-frm-modal-content.show {
+	opacity: 1 !important;
 }
