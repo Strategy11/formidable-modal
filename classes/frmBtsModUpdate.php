@@ -34,12 +34,13 @@ class frmBtsModUpdate extends FrmAddon {
 	 *
 	 * @var string
 	 */
-	public $version = '2.0';
+	public $version;
 
 	/**
 	 * Constructor.
 	 */
 	public function __construct() {
+		$this->version     = frmBtsModApp::$plug_version;
 		$this->plugin_file = dirname( dirname( __FILE__ ) ) . '/formidable-modal.php';
 		parent::__construct();
 	}
