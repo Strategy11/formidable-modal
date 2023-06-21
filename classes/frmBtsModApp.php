@@ -15,7 +15,7 @@ class frmBtsModApp {
 	 *
 	 * @var string
 	 */
-	public static $plug_version = '3.0';
+	public static $plug_version = '3.0.1';
 
 	/**
 	 * Constructor.
@@ -256,8 +256,8 @@ class frmBtsModApp {
 	 */
 	public static function enqueue_scripts() {
 		$plugin_url = plugins_url() . '/' . basename( dirname( dirname( __FILE__ ) ) );
-		wp_enqueue_script( 'frm-bootstrap-modal', $plugin_url . '/js/bootstrap-modal.min.js', array(), self::$version, true );
-		wp_enqueue_style( 'frm-bootstrap-modal', $plugin_url . '/css/bootstrap-modal.css', array(), self::$version );
+		wp_enqueue_script( 'frm-bootstrap-modal', $plugin_url . '/js/bootstrap-modal.min.js', array(), self::$plug_version, true );
+		wp_enqueue_style( 'frm-bootstrap-modal', $plugin_url . '/css/bootstrap-modal.css', array(), self::$plug_version );
 	}
 
 	/**
