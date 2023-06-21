@@ -11,7 +11,7 @@ name: PHPUnit
 jobs:
   build-test:
     if: contains(github.event.pull_request.labels.*.name, 'run tests')
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         include:
@@ -26,9 +26,9 @@ jobs:
 
     name: ${{ matrix.pro }} with ${{ matrix.lite }} on PHP ${{ matrix.php }} and WP ${{ matrix.wordpress }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.5.3
 
-      - uses: shivammathur/setup-php@v2
+      - uses: shivammathur/setup-php@2.25.4
         with:
           php-version: ${{ matrix.php }}
           tools: phpunit-polyfills
