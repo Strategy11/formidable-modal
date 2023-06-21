@@ -283,7 +283,7 @@ class frmBtsModApp {
 				$title = empty( $form_atts['modal_title'] ) ? $form_atts['label'] : $form_atts['modal_title'];
 
 				$modal = '<div id="frm-modal-' . esc_attr( $i ) . '"';
-				$modal .= ' class="modal fade wp-block-frm-modal-content ' . esc_attr( $form_atts['modal_class'] ) . '" tabindex="-1" role="dialog"';
+				$modal .= ' class="modal fade frm-modal-sc wp-block-frm-modal-content ' . esc_attr( $form_atts['modal_class'] ) . '" tabindex="-1" role="dialog"';
 				$modal .= ' aria-labelledby="frmModalLabel-' . esc_attr( $i ) . '" aria-hidden="true">';
 				$modal .= '<div class="modal-dialog ' . esc_attr( $size ) . '">';
 				$modal .= '<div class="modal-content">';
