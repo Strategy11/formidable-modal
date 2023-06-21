@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Formidable Bootstrap Modal
  * Description: Easily insert a link to open a form in a model
- * Version: 3.0
+ * Version: 3.0.1
  * Plugin URI: https://formidableforms.com/
  * Author URI: https://strategy11.com/
  * Author: Strategy11
