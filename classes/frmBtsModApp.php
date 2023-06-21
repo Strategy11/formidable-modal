@@ -15,7 +15,7 @@ class frmBtsModApp {
 	 *
 	 * @var string
 	 */
-	public static $version = '3.0';
+	public static $plug_version = '3.0';
 
 	/**
 	 * Constructor.
