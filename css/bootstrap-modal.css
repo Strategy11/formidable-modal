@@ -516,8 +516,8 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 
 .wp-block-frm-modal-content .frm_modal_header_no_title .close {
 	position: absolute;
-	right: 26px;
-	top: 26px;
+	right: 1.625rem;
+	top: 1.625rem;
 	z-index: 1000;
 }
 
