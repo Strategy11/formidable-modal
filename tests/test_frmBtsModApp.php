@@ -15,7 +15,7 @@ class test_frmBtsModApp extends FrmUnitTest {
 		// Run through the add modal attrs method again.
 		$result2 = $this->run_private_method(
 			array( 'frmBtsModApp', 'maybe_add_modal_attrs_to_button' ),
-			array( $button, $atts )
+			array( $result, $atts )
 		);
 		$this->assertEquals( $result2, $result );
 
