@@ -19,7 +19,7 @@ jobs:
             wordpress: trunk
             pro: master
             lite: master
-          - php: 7.2
+          - php: 7.4
             wordpress: trunk
             pro: master
             lite: master
