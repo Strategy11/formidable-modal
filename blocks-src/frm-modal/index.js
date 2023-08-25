@@ -1,12 +1,13 @@
 import { registerBlockType, unregisterBlockType } from '@wordpress/blocks';
 import { InnerBlocks } from '@wordpress/block-editor';
+import FormidableIcon from '../../../formidable/js/src/common/components/icon';
 import Edit from './edit';
 import metadata from './block.json';
 
 unregisterBlockType( metadata.name );
 
 registerBlockType( metadata.name, {
-	icon: {
+	icon: FormidableIcon ? FormidableIcon : {
 		src: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 599.68 601.37" width="120" height="120">
 			<path className="cls-1 orange" d="M289.6 384h140v76h-140z"></path>
 			<path className="cls-1"

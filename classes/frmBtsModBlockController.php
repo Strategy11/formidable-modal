@@ -22,6 +22,7 @@ class frmBtsModBlockController {
 		register_block_type(
 			frmBtsModApp::plugin_path() . '/blocks/frm-modal',
 			array(
+				'title'           => FrmAppHelper::get_menu_name() . ' ' . __( 'Modal', 'frmmodal' ),
 				'render_callback' => array( __CLASS__, 'render_modal_block' ),
 			)
 		);
