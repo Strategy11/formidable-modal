@@ -536,3 +536,8 @@ body.admin-bar .wp-block-frm-modal-content .modal-dialog {
 .wp-block-frm-modal-content.show {
 	opacity: 1 !important;
 }
+
+/* Google Places - Autocomplete dropdown make visible in modal */
+.pac-container {
+	z-index:9999;
+}
