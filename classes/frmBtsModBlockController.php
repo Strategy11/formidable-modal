@@ -17,8 +17,14 @@ class frmBtsModBlockController {
 
 	/**
 	 * Init blocks.
+	 *
+	 * @return void
 	 */
 	public static function init_blocks() {
+		if ( ! class_exists( 'FrmAppHelper' ) ) {
+			return;
+		}
+
 		register_block_type(
 			frmBtsModApp::plugin_path() . '/blocks/frm-modal',
 			array(
