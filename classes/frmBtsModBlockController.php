@@ -21,14 +21,11 @@ class frmBtsModBlockController {
 	 * @return void
 	 */
 	public static function init_blocks() {
-		if ( ! class_exists( 'FrmAppHelper' ) ) {
-			return;
-		}
-
+		$menu_name = method_exists( 'FrmAppHelper', 'get_menu_name' ) ? FrmAppHelper::get_menu_name() : 'Formidable';
 		register_block_type(
 			frmBtsModApp::plugin_path() . '/blocks/frm-modal',
 			array(
-				'title'           => FrmAppHelper::get_menu_name() . ' ' . __( 'Modal', 'frmmodal' ),
+				'title'           => $menu_name . ' ' . __( 'Modal', 'frmmodal' ),
 				'render_callback' => array( __CLASS__, 'render_modal_block' ),
 			)
 		);
