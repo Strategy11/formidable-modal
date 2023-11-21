@@ -36,6 +36,10 @@
 		border-bottom: 1px solid #dee2e6;
 		border-top-left-radius: var(--bs-modal-inner-border-radius);
 		border-top-right-radius: var(--bs-modal-inner-border-radius);
+
+		.close {
+			display: none;
+		}
 	}
 
 	.modal-body {
