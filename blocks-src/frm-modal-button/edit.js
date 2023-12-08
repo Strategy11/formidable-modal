@@ -33,6 +33,7 @@ import { link, linkOff } from '@wordpress/icons';
 import { createBlock } from '@wordpress/blocks';
 import { useMergeRefs } from '@wordpress/compose';
 import { prependHTTP } from '@wordpress/url';
+import { getDefaultButtonText } from './helpers';
 
 const NEW_TAB_REL = 'noreferrer noopener';
 
@@ -161,7 +162,7 @@ function ButtonEdit( props ) {
 				<RichText
 					ref={ richTextRef }
 					aria-label={ __( 'Button text' ) }
-					placeholder={ placeholder || __( 'Add text…' ) }
+					placeholder={ getDefaultButtonText() }
 					value={ text }
 					onChange={ ( value ) => setButtonText( value ) }
 					withoutInteractiveFormatting
