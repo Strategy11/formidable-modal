@@ -15,6 +15,8 @@ import {
 	__experimentalGetElementClassName,
 } from '@wordpress/block-editor';
 
+import { getDefaultButtonText } from './helpers';
+
 export default function save( { attributes, className } ) {
 	const {
 		textAlign,
@@ -27,10 +29,6 @@ export default function save( { attributes, className } ) {
 		url,
 		width,
 	} = attributes;
-
-	if ( ! text ) {
-		return null;
-	}
 
 	const borderProps = getBorderClassesAndStyles( attributes );
 	const colorProps = getColorClassesAndStyles( attributes );
@@ -71,7 +69,7 @@ export default function save( { attributes, className } ) {
 				href={ url }
 				title={ title }
 				style={ buttonStyle }
-				value={ text }
+				value={ text ? text : getDefaultButtonText() }
 				target={ linkTarget }
 				rel={ rel }
 			/>
