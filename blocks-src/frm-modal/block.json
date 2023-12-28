@@ -6,7 +6,7 @@
   "title": "Formidable Modal",
   "category": "widgets",
   "icon": "smiley",
-  "description": "",
+  "description": "Display a modal",
   "supports": {
     "html": false,
     "defaultStylePicker": true,
