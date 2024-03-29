@@ -1,0 +1,3 @@
+files:
+  - source: /languages/formidable-modal.pot
+    translation: /languages/formidable-modal-%locale_with_underscore%.po
