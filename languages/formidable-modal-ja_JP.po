@@ -1,0 +1,159 @@
+# Copyright (C) 2023 Strategy11
+# This file is distributed under the same license as the Formidable Bootstrap Modal plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: a2d8bc55ffb2a23897925e74530a7308\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/formidable-modal\n"
+"Last-Translator: \n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-12-11T14:05:25+00:00\n"
+"PO-Revision-Date: 2024-03-29 15:05\n"
+"X-Generator: WP-CLI 2.9.0\n"
+"X-Domain: frmmodal\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: a2d8bc55ffb2a23897925e74530a7308\n"
+"X-Crowdin-Project-ID: 28\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: /[Strategy11.formidable-modal] master/languages/formidable-modal.pot\n"
+"X-Crowdin-File-ID: 2468\n"
+"Language: ja_JP\n"
+
+#. Plugin Name of the plugin
+msgid "Formidable Bootstrap Modal"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://formidableforms.com/"
+msgstr "https://formidableforms.com/"
+
+#. Description of the plugin
+msgid "Easily insert a link to open a form in a model"
+msgstr ""
+
+#. Author of the plugin
+msgid "Strategy11"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://strategy11.com/"
+msgstr ""
+
+#: classes/frmBtsModBlockController.php:28
+msgid "Modal"
+msgstr ""
+
+#: blocks-src/frm-modal-button/helpers.js:3
+#: blocks/frm-modal-button/index.js:1
+msgid "Click here"
+msgstr ""
+
+#: blocks-src/frm-modal-content/edit.js:84
+#: blocks/frm-modal-content/index.js:1
+msgid "Modal dialog size"
+msgstr ""
+
+#: blocks-src/frm-modal-content/edit.js:86
+#: blocks/frm-modal-content/index.js:1
+msgid "Default"
+msgstr "デフォルト"
+
+#: blocks-src/frm-modal-content/edit.js:87
+#: blocks/frm-modal-content/index.js:1
+msgid "Small"
+msgstr "小"
+
+#: blocks-src/frm-modal-content/edit.js:88
+#: blocks/frm-modal-content/index.js:1
+msgid "Large"
+msgstr "大"
+
+#: blocks-src/frm-modal-content/edit.js:96
+#: blocks/frm-modal-content/index.js:1
+msgid "Modal appearance"
+msgstr ""
+
+#: blocks-src/frm-modal-content/edit.js:100
+#: blocks/frm-modal-content/index.js:1
+msgid "Overlay color"
+msgstr ""
+
+#: blocks-src/frm-modal-content/edit.js:106
+#: blocks/frm-modal-content/index.js:1
+msgid "Background color"
+msgstr "背景色"
+
+#: blocks-src/frm-modal-button/block.json
+#: blocks/frm-modal-button/block.json
+msgctxt "block title"
+msgid "Frm Modal Button"
+msgstr ""
+
+#: blocks-src/frm-modal-button/block.json
+#: blocks/frm-modal-button/block.json
+msgctxt "block description"
+msgid "Prompt visitors to take action with a button-style link."
+msgstr "ボタンスタイルのリンクで、訪問者に行動を喚起しましょう。"
+
+#: blocks-src/frm-modal-button/block.json
+#: blocks/frm-modal-button/block.json
+msgctxt "block keyword"
+msgid "link"
+msgstr "リンク"
+
+#: blocks-src/frm-modal-button/block.json
+#: blocks/frm-modal-button/block.json
+msgctxt "block style label"
+msgid "Fill"
+msgstr "入力"
+
+#: blocks-src/frm-modal-button/block.json
+#: blocks/frm-modal-button/block.json
+msgctxt "block style label"
+msgid "Outline"
+msgstr ""
+
+#: blocks-src/frm-modal-content/block.json
+#: blocks/frm-modal-content/block.json
+msgctxt "block title"
+msgid "Formidable Modal Content"
+msgstr ""
+
+#: blocks-src/frm-modal-content/block.json
+#: blocks/frm-modal-content/block.json
+msgctxt "block description"
+msgid "Gather blocks in a layout container."
+msgstr ""
+
+#: blocks-src/frm-modal-content/block.json
+#: blocks/frm-modal-content/block.json
+msgctxt "block keyword"
+msgid "container"
+msgstr ""
+
+#: blocks-src/frm-modal-content/block.json
+#: blocks/frm-modal-content/block.json
+msgctxt "block keyword"
+msgid "wrapper"
+msgstr ""
+
+#: blocks-src/frm-modal-content/block.json
+#: blocks/frm-modal-content/block.json
+msgctxt "block keyword"
+msgid "row"
+msgstr ""
+
+#: blocks-src/frm-modal-content/block.json
+#: blocks/frm-modal-content/block.json
+msgctxt "block keyword"
+msgid "section"
+msgstr ""
+
+#: blocks-src/frm-modal/block.json
+#: blocks/frm-modal/block.json
+msgctxt "block title"
+msgid "Formidable Modal"
+msgstr ""
+
