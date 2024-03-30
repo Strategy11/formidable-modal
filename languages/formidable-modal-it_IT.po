@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-12-11T14:05:25+00:00\n"
-"PO-Revision-Date: 2024-03-29 15:05\n"
+"PO-Revision-Date: 2024-03-30 03:02\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: frmmodal\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -48,7 +48,7 @@ msgstr ""
 #: blocks-src/frm-modal-button/helpers.js:3
 #: blocks/frm-modal-button/index.js:1
 msgid "Click here"
-msgstr ""
+msgstr "Fai clic qui"
 
 #: blocks-src/frm-modal-content/edit.js:84
 #: blocks/frm-modal-content/index.js:1
@@ -107,13 +107,13 @@ msgstr "link"
 #: blocks/frm-modal-button/block.json
 msgctxt "block style label"
 msgid "Fill"
-msgstr ""
+msgstr "Riempimento"
 
 #: blocks-src/frm-modal-button/block.json
 #: blocks/frm-modal-button/block.json
 msgctxt "block style label"
 msgid "Outline"
-msgstr ""
+msgstr "Schema"
 
 #: blocks-src/frm-modal-content/block.json
 #: blocks/frm-modal-content/block.json
@@ -125,31 +125,31 @@ msgstr ""
 #: blocks/frm-modal-content/block.json
 msgctxt "block description"
 msgid "Gather blocks in a layout container."
-msgstr ""
+msgstr "Raccogli i blocchi in un layout contenitore."
 
 #: blocks-src/frm-modal-content/block.json
 #: blocks/frm-modal-content/block.json
 msgctxt "block keyword"
 msgid "container"
-msgstr ""
+msgstr "contenitore"
 
 #: blocks-src/frm-modal-content/block.json
 #: blocks/frm-modal-content/block.json
 msgctxt "block keyword"
 msgid "wrapper"
-msgstr ""
+msgstr "wrapper"
 
 #: blocks-src/frm-modal-content/block.json
 #: blocks/frm-modal-content/block.json
 msgctxt "block keyword"
 msgid "row"
-msgstr ""
+msgstr "riga"
 
 #: blocks-src/frm-modal-content/block.json
 #: blocks/frm-modal-content/block.json
 msgctxt "block keyword"
 msgid "section"
-msgstr ""
+msgstr "sezione"
 
 #: blocks-src/frm-modal/block.json
 #: blocks/frm-modal/block.json
