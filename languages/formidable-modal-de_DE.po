@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-12-11T14:05:25+00:00\n"
-"PO-Revision-Date: 2024-04-08 14:45\n"
+"PO-Revision-Date: 2024-04-09 14:53\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: frmmodal\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -78,7 +78,7 @@ msgstr "Modales Aussehen"
 #: blocks-src/frm-modal-content/edit.js:100
 #: blocks/frm-modal-content/index.js:1
 msgid "Overlay color"
-msgstr "Overlay Farbe"
+msgstr "Overlay-Farbe"
 
 #: blocks-src/frm-modal-content/edit.js:106
 #: blocks/frm-modal-content/index.js:1
@@ -89,7 +89,7 @@ msgstr "Hintergrundfarbe:"
 #: blocks/frm-modal-button/block.json
 msgctxt "block title"
 msgid "Frm Modal Button"
-msgstr "Frm Modal Schaltfläche"
+msgstr "Frm Modal Button"
 
 #: blocks-src/frm-modal-button/block.json
 #: blocks/frm-modal-button/block.json
