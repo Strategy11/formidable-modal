@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-12-11T14:05:25+00:00\n"
-"PO-Revision-Date: 2024-04-11 02:43\n"
+"PO-Revision-Date: 2024-04-14 02:39\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: frmmodal\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #. Plugin Name of the plugin
 msgid "Formidable Bootstrap Modal"
-msgstr "Modale Bootstrap formidabile"
+msgstr "Formidable Bootstrap Modal"
 
 #. Plugin URI of the plugin
 msgid "https://formidableforms.com/"
@@ -53,7 +53,7 @@ msgstr "Fai clic qui"
 #: blocks-src/frm-modal-content/edit.js:84
 #: blocks/frm-modal-content/index.js:1
 msgid "Modal dialog size"
-msgstr "Dimensione della finestra di dialogo modale"
+msgstr "Dimensione della finestra di dialogo modal"
 
 #: blocks-src/frm-modal-content/edit.js:86
 #: blocks/frm-modal-content/index.js:1
@@ -73,7 +73,7 @@ msgstr "Grande"
 #: blocks-src/frm-modal-content/edit.js:96
 #: blocks/frm-modal-content/index.js:1
 msgid "Modal appearance"
-msgstr "Aspetto modale"
+msgstr "Aspetto modal"
 
 #: blocks-src/frm-modal-content/edit.js:100
 #: blocks/frm-modal-content/index.js:1
@@ -155,5 +155,5 @@ msgstr "sezione"
 #: blocks/frm-modal/block.json
 msgctxt "block title"
 msgid "Formidable Modal"
-msgstr "Modale formidabile"
+msgstr "Formidable Modal"
 
