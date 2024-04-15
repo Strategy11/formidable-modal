@@ -23,7 +23,7 @@ msgid "https://formidableforms.com/"
 msgstr ""
 
 #. Description of the plugin
-msgid "Easily insert a link to open a form in a model"
+msgid "Easily insert a link to open a form in a modal"
 msgstr ""
 
 #. Author of the plugin
