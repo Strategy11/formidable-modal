@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-12-11T14:05:25+00:00\n"
-"PO-Revision-Date: 2024-04-09 14:53\n"
+"PO-Revision-Date: 2024-04-16 02:50\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: frmmodal\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -30,8 +30,8 @@ msgid "https://formidableforms.com/"
 msgstr "https://formidableforms.com/"
 
 #. Description of the plugin
-msgid "Easily insert a link to open a form in a model"
-msgstr "Einfaches Einfügen eines Links zum Öffnen eines Formulars in einem Modell"
+msgid "Easily insert a link to open a form in a modal"
+msgstr ""
 
 #. Author of the plugin
 msgid "Strategy11"
