@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-12-11T14:05:25+00:00\n"
-"PO-Revision-Date: 2024-04-17 14:41\n"
+"PO-Revision-Date: 2024-04-18 14:39\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: frmmodal\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #. Plugin Name of the plugin
 msgid "Formidable Bootstrap Modal"
-msgstr "Formidable Bootstrap Modal"
+msgstr "Formidable Bootstrap モーダル"
 
 #. Plugin URI of the plugin
 msgid "https://formidableforms.com/"
@@ -155,5 +155,5 @@ msgstr "セクション"
 #: blocks/frm-modal/block.json
 msgctxt "block title"
 msgid "Formidable Modal"
-msgstr "Formidable Modal"
+msgstr "Formidable モーダル"
 
