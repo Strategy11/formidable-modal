@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-12-11T14:05:25+00:00\n"
-"PO-Revision-Date: 2024-04-18 14:39\n"
+"PO-Revision-Date: 2024-04-19 15:10\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: frmmodal\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -31,7 +31,7 @@ msgstr "https://formidableforms.com/"
 
 #. Description of the plugin
 msgid "Easily insert a link to open a form in a modal"
-msgstr ""
+msgstr "簡単にリンクを挿入して、フォームをモーダルで開く"
 
 #. Author of the plugin
 msgid "Strategy11"
