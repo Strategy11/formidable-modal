@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-12-11T14:05:25+00:00\n"
-"PO-Revision-Date: 2024-04-20 03:10\n"
+"PO-Revision-Date: 2024-05-04 22:47\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: frmmodal\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -113,7 +113,7 @@ msgstr "Riempimento"
 #: blocks/frm-modal-button/block.json
 msgctxt "block style label"
 msgid "Outline"
-msgstr "Schema"
+msgstr "Contorno"
 
 #: blocks-src/frm-modal-content/block.json
 #: blocks/frm-modal-content/block.json
