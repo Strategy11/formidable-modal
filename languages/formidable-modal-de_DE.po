@@ -1,0 +1,159 @@
+# Copyright (C) 2023 Strategy11
+# This file is distributed under the same license as the Formidable Bootstrap Modal plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: a2d8bc55ffb2a23897925e74530a7308\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/formidable-modal\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-12-11T14:05:25+00:00\n"
+"PO-Revision-Date: 2024-04-21 17:13\n"
+"X-Generator: WP-CLI 2.9.0\n"
+"X-Domain: frmmodal\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: a2d8bc55ffb2a23897925e74530a7308\n"
+"X-Crowdin-Project-ID: 28\n"
+"X-Crowdin-Language: de\n"
+"X-Crowdin-File: /[Strategy11.formidable-modal] master/languages/formidable-modal.pot\n"
+"X-Crowdin-File-ID: 2468\n"
+"Language: de_DE\n"
+
+#. Plugin Name of the plugin
+msgid "Formidable Bootstrap Modal"
+msgstr "Formidable Bootstrap Modal"
+
+#. Plugin URI of the plugin
+msgid "https://formidableforms.com/"
+msgstr "https://formidableforms.com/"
+
+#. Description of the plugin
+msgid "Easily insert a link to open a form in a modal"
+msgstr "Füge einfach einen Link zum Öffnen eines Formulars in eine Vorlage ein"
+
+#. Author of the plugin
+msgid "Strategy11"
+msgstr "Strategie11"
+
+#. Author URI of the plugin
+msgid "https://strategy11.com/"
+msgstr "https://strategy11.com/"
+
+#: classes/frmBtsModBlockController.php:28
+msgid "Modal"
+msgstr "Modal"
+
+#: blocks-src/frm-modal-button/helpers.js:3
+#: blocks/frm-modal-button/index.js:1
+msgid "Click here"
+msgstr "Hier klicken"
+
+#: blocks-src/frm-modal-content/edit.js:84
+#: blocks/frm-modal-content/index.js:1
+msgid "Modal dialog size"
+msgstr "Größe des modalen Dialogs"
+
+#: blocks-src/frm-modal-content/edit.js:86
+#: blocks/frm-modal-content/index.js:1
+msgid "Default"
+msgstr "Standard"
+
+#: blocks-src/frm-modal-content/edit.js:87
+#: blocks/frm-modal-content/index.js:1
+msgid "Small"
+msgstr "Klein"
+
+#: blocks-src/frm-modal-content/edit.js:88
+#: blocks/frm-modal-content/index.js:1
+msgid "Large"
+msgstr "Groß"
+
+#: blocks-src/frm-modal-content/edit.js:96
+#: blocks/frm-modal-content/index.js:1
+msgid "Modal appearance"
+msgstr "Modales Aussehen"
+
+#: blocks-src/frm-modal-content/edit.js:100
+#: blocks/frm-modal-content/index.js:1
+msgid "Overlay color"
+msgstr "Overlay-Farbe"
+
+#: blocks-src/frm-modal-content/edit.js:106
+#: blocks/frm-modal-content/index.js:1
+msgid "Background color"
+msgstr "Hintergrundfarbe:"
+
+#: blocks-src/frm-modal-button/block.json
+#: blocks/frm-modal-button/block.json
+msgctxt "block title"
+msgid "Frm Modal Button"
+msgstr "Frm Modal Button"
+
+#: blocks-src/frm-modal-button/block.json
+#: blocks/frm-modal-button/block.json
+msgctxt "block description"
+msgid "Prompt visitors to take action with a button-style link."
+msgstr "Besucher mit einem Link im Button-Stil auffordern, aktiv zu werden."
+
+#: blocks-src/frm-modal-button/block.json
+#: blocks/frm-modal-button/block.json
+msgctxt "block keyword"
+msgid "link"
+msgstr "Link"
+
+#: blocks-src/frm-modal-button/block.json
+#: blocks/frm-modal-button/block.json
+msgctxt "block style label"
+msgid "Fill"
+msgstr "Füllen"
+
+#: blocks-src/frm-modal-button/block.json
+#: blocks/frm-modal-button/block.json
+msgctxt "block style label"
+msgid "Outline"
+msgstr "Kontur"
+
+#: blocks-src/frm-modal-content/block.json
+#: blocks/frm-modal-content/block.json
+msgctxt "block title"
+msgid "Formidable Modal Content"
+msgstr "Formidable Modal Content"
+
+#: blocks-src/frm-modal-content/block.json
+#: blocks/frm-modal-content/block.json
+msgctxt "block description"
+msgid "Gather blocks in a layout container."
+msgstr "Blöcke in einem Layout-Container zusammenfassen."
+
+#: blocks-src/frm-modal-content/block.json
+#: blocks/frm-modal-content/block.json
+msgctxt "block keyword"
+msgid "container"
+msgstr "Container"
+
+#: blocks-src/frm-modal-content/block.json
+#: blocks/frm-modal-content/block.json
+msgctxt "block keyword"
+msgid "wrapper"
+msgstr "Wrapper"
+
+#: blocks-src/frm-modal-content/block.json
+#: blocks/frm-modal-content/block.json
+msgctxt "block keyword"
+msgid "row"
+msgstr "Zeile"
+
+#: blocks-src/frm-modal-content/block.json
+#: blocks/frm-modal-content/block.json
+msgctxt "block keyword"
+msgid "section"
+msgstr "Abschnitt"
+
+#: blocks-src/frm-modal/block.json
+#: blocks/frm-modal/block.json
+msgctxt "block title"
+msgid "Formidable Modal"
+msgstr "Formidable Modal"
+
